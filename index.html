@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WoW Applet</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Joseph Salem">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="menu-grid">
+        <div id="grid-item-header">
+            WoW Crafting Applet
+        </div>
+        
+        <div id="grid-item-content-left">
+            <label for="cDiff">
+                <h1>Crafting Difficulty:</h1>
+                <input type="number" step="1" min="0" pattern="\d" name="cDiff"/>
+            </label>
+
+            <label for="cSkill">
+                <h1>Crafting Skill:</h1>
+                <input type="number" step="1" min="0" pattern="\d" name="cSkill"/>
+            </label>
+
+            <label for="iProb">
+                <h1>Inspiration Probability:</h1>
+                <input type="number" step="0.01" min="0.01" pattern="\d" name="iProb"/>
+            </label>
+        </div>
+
+        <div id="grid-item-content-right">
+            <span name="iBonus">
+                <h1>Inspiration Bonus</h1>
+                <p>Stuff</p>
+            </span>
+
+            <span name="qMax">
+                <h1>Max Quality</h1>
+                <p>Stuff+</p>
+            </span>
+
+            <span name="eCrafts">
+                <h1>Expected Number of Crafts</h1>
+                <p>Stuff++^2</p>
+            </span>
+        </div>
+
+        <div id="grid-item-footer">
+            <h1>Dynamic Descriptions When Hovering Here, Probably.</h1>
+        </div>
+    </div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+
+</body>
+
+</html>
