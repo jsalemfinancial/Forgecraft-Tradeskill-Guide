@@ -11,9 +11,6 @@
 </head>
 
 <body>
-    <!-- Add a placeholder for the Twitch embed -->
-    <div id="twitch-embed"></div>
-
     <div class="menu-grid">
         <div id="grid-item-header">
             WoW Crafting Applet
@@ -69,7 +66,7 @@
         channel: "jedith",
         parent: ["www.google.com", "www.gstatic.com", "www.github.com", "jsalemfinancial.github.io/WoW-Applet"]
       };
-      var player = new Twitch.Player("<player div ID>", options);
+      var player = new Twitch.Player("twitch-embed", options);
       player.setVolume(0.5);
     </script>
 </body>
