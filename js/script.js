@@ -31,13 +31,30 @@ let Calculate = new class {
 }
 
 document.querySelectorAll("input").forEach(input => {
-    input.addEventListener('input', function(event) {
-        Calculate[event.target.name] = parseFloat(event.target.value);
+    input.addEventListener('input', function() {
+        // Calculate[event.target.name] = parseFloat(event.target.value);
+        Calculate[input.getAttribute("name")] = parseFloat(input.value);
 
         if (typeof(Calculate.cSkill) == "number" && typeof(Calculate.cDiff) == "number" && typeof(Calculate.iProb) == "number") {
             Calculate.getParams();
             Calculate.geteCrafts();
             Calculate.display();
+        };
+    });
+});
+
+document.getElementById("grid-item-content-right").querySelectorAll("span").forEach(variable => {
+    variable.addEventListener('mouseover', function() {
+        if (variable.getAttribute("name")== "iBonus") {
+            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = "The insipiration bonus";        
+        };
+
+        if (variable.getAttribute("name") == "qMax") {
+            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = "The max achievable quality";        
+        };
+
+        if (variable.getAttribute("name") == "eCrafts") {
+            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = "The expected crafts to reach max quality";        
         };
     });
 });
