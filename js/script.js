@@ -58,3 +58,13 @@ document.getElementById("grid-item-content-right").querySelectorAll("span").forE
         };
     });
 });
+
+document.getElementById("twitch-player-minimize").addEventListener("click", function() {
+    document.getElementById("twitch-player-container").style.display = "none";
+    document.getElementById("stream-link").style.display = "flex";
+});
+
+document.getElementById("stream-link").addEventListener("click", function() {
+    document.getElementById("twitch-player-container").style.display = "flex";
+    document.getElementById("stream-link").style.display = "none";
+});
