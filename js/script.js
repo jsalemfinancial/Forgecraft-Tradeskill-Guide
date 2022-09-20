@@ -9,6 +9,10 @@ let Calculate = new class {
         this.iBonus = 0;
         this.qGap = 0;
         this.eCrafts = 0;
+
+        setTimeout(async () => {
+            this.twitchMinimize();
+        }, 2000);
     }
 
     getParams() {
@@ -20,6 +24,8 @@ let Calculate = new class {
 
     geteCrafts() {
         this.eCrafts = Math.ceil(Math.log(1 - ((this.cDiff - (this.cSkill + this.qGap*(5-this.qMax))))/this.iBonus)/Math.log(1 - this.iProb));
+        this.eCrafts = (this.eCrafts < 0) ? 0 : this.eCrafts;
+
         console.log(this.eCrafts);
     };
 
@@ -27,6 +33,11 @@ let Calculate = new class {
         document.getElementsByName("iBonus")[0].getElementsByTagName("p")[0].innerHTML = this.iBonus;
         document.getElementsByName("qMax")[0].getElementsByTagName("p")[0].innerHTML = this.qMax;
         document.getElementsByName("eCrafts")[0].getElementsByTagName("p")[0].innerHTML = this.eCrafts;
+    };
+
+    async twitchMinimize() {
+        document.getElementById("twitch-player-container").style.opacity = "0";
+        document.getElementById("stream-link").style.display = "flex";
     };
 }
 
@@ -59,12 +70,9 @@ document.getElementById("grid-item-content-right").querySelectorAll("span").forE
     });
 });
 
-document.getElementById("twitch-player-minimize").addEventListener("click", function() {
-    document.getElementById("twitch-player-container").style.display = "none";
-    document.getElementById("stream-link").style.display = "flex";
-});
+document.getElementById("twitch-player-minimize").addEventListener("click", Calculate.twitchMinimize);
 
-document.getElementById("stream-link").addEventListener("click", function() {
-    document.getElementById("twitch-player-container").style.display = "flex";
+document.getElementById("stream-link").addEventListener("click", async function() {
+    document.getElementById("twitch-player-container").style.opacity = "1";
     document.getElementById("stream-link").style.display = "none";
 });
