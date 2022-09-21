@@ -12,12 +12,13 @@
 
     text-size-adjust: auto;
     -webkit-text-size-adjust: auto;
-  }
+}
 
 body {
-    color: #8BD8BD;
-    background-image: url("https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/08/world-of-warcraft-dragonflight-main-menu-loading-screen.jpg");
-    background-size: cover;
+    color: #FFD700;
+    background-image: url("../graphics/dragonflight_background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
 
     width: 100vw;
     height: 100vh;
@@ -49,17 +50,31 @@ body {
 }
 
 .menu-grid div {
-    font-size: 1.25vw;
-    background-color: #2436656e;
-    filter: drop-shadow(0 0 0.4vw #ffffff4e);
+    font-size: 1vw;
+    /* background-image: url("../graphics/container_background.png");
+    background-size: 170% 110%;
+    background-repeat: no-repeat; */
+
+    background-image:  linear-gradient(to left, #26262600, #2626268e, #26262600);
+    /* background-color: #2626265e;
+    box-shadow: 0 0 0.5vw #a57a031e; */
 
     display: flex;
+}
+
+.menu-grid div p {
+    color: white;
+}
+
+.menu-grid div h1 {
+    font-weight: normal;
+    filter: drop-shadow(-0.15vw 0.1vh 0 rgb(37, 36, 36));
 }
 
 #grid-item-header {
     grid-area: header;
 
-    font-size: 3.5vw;
+    font-size: 2vw;
     border-radius: 0.25em/0.25em;
 
     flex-direction: column;
@@ -135,7 +150,6 @@ body {
 
 #twitch-player-container {
     position: fixed;
-    background-color: rebeccapurple;
 
     width: 20vw;
     height: 20vh;
