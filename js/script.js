@@ -76,3 +76,26 @@ document.getElementById("stream-link").addEventListener("click", async function(
     document.getElementById("twitch-player-container").style.opacity = "1";
     document.getElementById("stream-link").style.display = "none";
 });
+
+document.getElementById("dropdown").addEventListener("click", async function() {
+    var menuRod = document.getElementById("menu-rod");
+    var menuOptions = document.getElementById("menu-options");
+
+    menuRod.style.transition = "padding 1s";
+    
+    if (menuOptions.style.opacity == 0) {
+        menuRod.style.padding = "0 0 0 15vw";
+
+        setTimeout(async () => {
+            menuRod.style.transition = ""
+            menuOptions.style.transition = "opacity 2s";
+            menuOptions.style.opacity = "1";
+        }, 1000);
+    } else {
+        menuOptions.style.opacity = "0";
+
+        setTimeout(async () => {
+            menuRod.style.padding = "0 0 0 0";
+        }, 2000);
+    }
+});
