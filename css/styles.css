@@ -54,13 +54,12 @@ body {
 }
 
 .menu-grid div {
-    font-size: 1vw;
+    font-size: 1.5vw;
     /* background-image: url("../graphics/container_background.png");
     background-size: 170% 110%;
     background-repeat: no-repeat; */
 
     /* background-image:  linear-gradient(to right, #26262600, #262626d5 50%, #26262600); */
-    background-image:  linear-gradient(to right, #35170300, #3517035e 50%, #35170300);
     /* background-color: #2626265e;
     box-shadow: 0 0 0.5vw #a57a031e; */
 
@@ -138,6 +137,7 @@ body {
 
     font-size: 2vw;
     border-radius: 0.25em/0.25em;
+    background-image: linear-gradient(to right, #35170300, #3517035e 50%, #35170300);
 
     flex-direction: column;
     justify-content: center;
@@ -148,65 +148,68 @@ body {
     grid-area: main-left;
 
     border-radius: 1em/1em;
+    background-image: linear-gradient(to left, #35170300, #3517035e);
 
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-#grid-item-content-left label{
-    flex: auto;
+#grid-item-content-left label {
+
+    width: 80%;
+
     display: flex;
     flex-direction: column;
-    align-items: space-evenly;
+    align-items: flex-start;
     justify-content: center;
 }
 
-#grid-item-content-left label input{
+#grid-item-content-left label input {
     width: 10vw;
 
     font-size: 0.75vw;
-    margin: 10%;
-
-    align-self: center;
+    /* margin: 10%; */
 }
 
 #grid-item-content-right {
     grid-area: main-right;
 
     border-radius: 1em/1em;
+    background-image: linear-gradient(to right, #35170300 10%, #3517035e);
 
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-#grid-item-content-right span{
-    flex: auto;
+#grid-item-content-right label {
+
+    width: 80%;
+
     display: flex;
     flex-direction: column;
-    align-items: space-evenly;
+    align-items: flex-end;
     justify-content: center;
     
 }
 
-#grid-item-content-right span p{
-    margin: 10%;
-
-    align-self: center;
+#grid-item-content-right label p {
+    font-size: 1vw;
 }
 
 #grid-item-footer {
     grid-area: footer;
 
     border-radius: 0.75em/0.75em;
+    background-image: linear-gradient(to right, #35170300, #3517035e 50%, #35170300);
 
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#grid-item-footer h1{
+#grid-item-footer h1 {
     font-size: 2vw;
 }
 

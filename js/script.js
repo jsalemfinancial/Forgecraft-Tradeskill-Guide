@@ -1,5 +1,7 @@
 // main calculation script
 
+
+// Calculator class.
 let Calculate = new class {
     constructor() {
         this.cSkill = null;
@@ -9,10 +11,6 @@ let Calculate = new class {
         this.iBonus = 0;
         this.qGap = 0;
         this.eCrafts = 0;
-
-        setTimeout(async () => {
-            this.twitchMinimize();
-        }, 2000);
     }
 
     getParams() {
@@ -34,16 +32,30 @@ let Calculate = new class {
         document.getElementsByName("qMax")[0].getElementsByTagName("p")[0].innerHTML = this.qMax;
         document.getElementsByName("eCrafts")[0].getElementsByTagName("p")[0].innerHTML = this.eCrafts;
     };
-
-    async twitchMinimize() {
-        document.getElementById("twitch-player-container").style.opacity = "0";
-        document.getElementById("stream-link").style.display = "flex";
-    };
 }
+
+//Initial globals for stream.
+
+async function twitchMinimize() {
+    clearTimeout(INIT_MINIMIZE);
+
+    document.getElementById("twitch-player-container").style.transition = "bottom 1s";
+    document.getElementById("twitch-player-container").style.bottom = "-20vh";
+
+    setTimeout(async () => {
+        document.getElementById("stream-link").style.display = "flex";
+        document.getElementById("twitch-player-container").style.transition = "";
+    }, 1000);
+};
+
+const INIT_MINIMIZE = setTimeout(async () => {
+                        twitchMinimize();
+                    }, 5000);
+
+// Event listeners
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener('input', function() {
-        // Calculate[event.target.name] = parseFloat(event.target.value);
         Calculate[input.getAttribute("name")] = parseFloat(input.value);
 
         if (typeof(Calculate.cSkill) == "number" && typeof(Calculate.cDiff) == "number" && typeof(Calculate.iProb) == "number") {
@@ -54,7 +66,7 @@ document.querySelectorAll("input").forEach(input => {
     });
 });
 
-document.getElementById("grid-item-content-right").querySelectorAll("span").forEach(variable => {
+document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
     variable.addEventListener('mouseover', function() {
         if (variable.getAttribute("name")== "iBonus") {
             document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = "The insipiration bonus";        
@@ -70,11 +82,12 @@ document.getElementById("grid-item-content-right").querySelectorAll("span").forE
     });
 });
 
-document.getElementById("twitch-player-minimize").addEventListener("click", Calculate.twitchMinimize);
+document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
 
 document.getElementById("stream-link").addEventListener("click", async function() {
-    document.getElementById("twitch-player-container").style.opacity = "1";
     document.getElementById("stream-link").style.display = "none";
+    document.getElementById("twitch-player-container").style.transition = "bottom 1s";
+    document.getElementById("twitch-player-container").style.bottom = "0";
 });
 
 document.getElementById("dropdown").addEventListener("click", async function() {
@@ -88,7 +101,7 @@ document.getElementById("dropdown").addEventListener("click", async function() {
 
         setTimeout(async () => {
             menuRod.style.transition = ""
-            menuOptions.style.transition = "opacity 2s";
+            menuOptions.style.transition = "opacity 1s";
             menuOptions.style.opacity = "1";
         }, 1000);
     } else {
@@ -96,6 +109,6 @@ document.getElementById("dropdown").addEventListener("click", async function() {
 
         setTimeout(async () => {
             menuRod.style.padding = "0 0 0 0";
-        }, 2000);
+        }, 1000);
     }
 });
