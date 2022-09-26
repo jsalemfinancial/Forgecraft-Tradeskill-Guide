@@ -101,6 +101,7 @@ document.getElementById("dropdown").addEventListener("click", async () => {
     var menuOptions = document.getElementById("menu-options");
 
     menuRod.style.transition = "padding 0.25s";
+    menuRod.style.backgroundColor = "#FFD700";
     
     if (menuOptions.style.opacity == 0) {
         menuRod.style.padding = "0 15vw 0 0";
