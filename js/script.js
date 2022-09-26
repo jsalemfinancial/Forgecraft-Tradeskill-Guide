@@ -69,7 +69,7 @@ document.querySelectorAll("input").forEach(input => {
 document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
     variable.addEventListener('mouseover', async function() {
         if (variable.getAttribute("name")== "iBonus") {
-            await fetch("https://github.com/jsalemfinancial/WoW-Applet/blob/main/descriptions/inspiration.txt")
+            await fetch("github.com/jsalemfinancial/WoW-Applet/blob/main/descriptions/inspiration.txt")
                 .then(response => response.text())
                 .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = text);
             console.log("fetch done");        
