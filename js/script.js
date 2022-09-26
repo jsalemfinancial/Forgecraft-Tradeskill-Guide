@@ -55,7 +55,7 @@ const INIT_MINIMIZE = setTimeout(async () => {
 // Event listeners
 
 document.querySelectorAll("input").forEach(input => {
-    input.addEventListener('input', function() {
+    input.addEventListener('input', () => {
         Calculate[input.getAttribute("name")] = parseFloat(input.value);
 
         if (typeof(Calculate.cSkill) == "number" && typeof(Calculate.cDiff) == "number" && typeof(Calculate.iProb) == "number") {
@@ -67,7 +67,7 @@ document.querySelectorAll("input").forEach(input => {
 });
 
 document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
-    variable.addEventListener('mouseover', async function() {
+    variable.addEventListener('mouseover', async () => {
         if (variable.getAttribute("name") == "iBonus") {
             await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration.txt")
                 .then(response => response.text())
@@ -90,13 +90,13 @@ document.getElementById("grid-item-content-right").querySelectorAll("label").for
 
 document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
 
-document.getElementById("stream-link").addEventListener("click", async function() {
+document.getElementById("stream-link").addEventListener("click", async () => {
     document.getElementById("stream-link").style.display = "none";
     document.getElementById("twitch-player-container").style.transition = "bottom 0.5s";
     document.getElementById("twitch-player-container").style.bottom = "0";
 });
 
-document.getElementById("dropdown").addEventListener("click", async function() {
+document.getElementById("dropdown").addEventListener("click", async () => {
     var menuRod = document.getElementById("menu-rod");
     var menuOptions = document.getElementById("menu-options");
 
