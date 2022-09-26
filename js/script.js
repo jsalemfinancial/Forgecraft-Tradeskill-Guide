@@ -69,7 +69,8 @@ document.querySelectorAll("input").forEach(input => {
 document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
     variable.addEventListener('mouseover', function() {
         if (variable.getAttribute("name")== "iBonus") {
-            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = fetch("https://github.com/jsalemfinancial/WoW-Applet/blob/main/descriptions/inspiration.txt").text();        
+            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = 
+                fetch("https://github.com/jsalemfinancial/WoW-Applet/blob/main/descriptions/inspiration.txt").then(response => response.text());        
         };
 
         if (variable.getAttribute("name") == "qMax") {
