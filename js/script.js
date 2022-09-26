@@ -68,19 +68,22 @@ document.querySelectorAll("input").forEach(input => {
 
 document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
     variable.addEventListener('mouseover', async function() {
-        if (variable.getAttribute("name")== "iBonus") {
+        if (variable.getAttribute("name") == "iBonus") {
             await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration.txt")
                 .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = text);
-            console.log("fetch done");        
+                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerText = text);       
         };
 
         if (variable.getAttribute("name") == "qMax") {
-            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = "The max achievable quality";        
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/quality.txt")
+                .then(response => response.text())
+                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerText = text);            
         };
 
         if (variable.getAttribute("name") == "eCrafts") {
-            document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerHTML = "The expected crafts to reach max quality";        
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
+                .then(response => response.text())
+                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerText = text);             
         };
     });
 });
