@@ -22,7 +22,7 @@
 body {
     color: #FFD700;
     background-image: url("../graphics/dragonflight_background.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
     width: 100vw;
