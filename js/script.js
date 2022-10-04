@@ -43,9 +43,11 @@ let Calculate = new class {
 
         if (this.cSkill + this.iBonus > this.cDiff) {
             this.qMax = 5;
-        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t3Ratio - 1)/this.t3Ratio) {
+        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t4Ratio - 1)/this.t4Ratio) {
+            console.log(this.cDiff*(this.t4Ratio - 1)/this.t4Ratio);
             this.qMax = 4;
-        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t2Ratio - 1)/this.t2Ratio) {
+        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t3Ratio - 1)/this.t3Ratio) {
+            console.log(this.cDiff*(this.t3Ratio - 1)/this.t3Ratio);
             this.qMax = 3;
         } else {
             this.qMax = 2;
