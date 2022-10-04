@@ -125,7 +125,6 @@ div p {
     grid-area: header;
 
     font-size: 2.5vw;
-    /* border-radius: 0.25em/0.25em; */
 
     display: flex;
     flex-direction: column;
@@ -133,7 +132,7 @@ div p {
     align-items: center;
 }
 
-#grid-item-header > img {
+#grid-item-header img {
     width: 40vw;
     height: 40vh;
     filter: drop-shadow(0 1vh 2vw black) contrast(115%);
