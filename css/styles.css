@@ -133,8 +133,8 @@ div p {
 }
 
 #grid-item-header img {
-    width: 40vw;
-    height: 40vh;
+    max-width: 40vw;
+    max-height: 40vh;
     filter: drop-shadow(0 1vh 2vw black) contrast(115%);
 }
 
