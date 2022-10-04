@@ -72,10 +72,14 @@ let Calculate = new class {
     };
 
     display() {
-        document.getElementsByName("iBonus")[0].getElementsByTagName("p")[0].innerHTML = (this.iBonus).toFixed(2);
-        document.getElementsByName("qMin")[0].getElementsByTagName("p")[0].innerHTML = this.qMin;
-        document.getElementsByName("qMax")[0].getElementsByTagName("p")[0].innerHTML = this.qMax;
-        document.getElementsByName("eCrafts")[0].getElementsByTagName("p")[0].innerHTML = this.eCrafts;
+        // document.getElementsByName("iBonus")[0].getElementsByTagName("p")[0].innerText = (this.iBonus).toFixed(2);
+
+        document.getElementsByName("qMin")[0].getElementsByTagName("p")[0].innerText = "Tier " + this.qMin;
+        document.getElementsByName("qMin")[0].getElementsByTagName("img")[0].src = "graphics/tier" + this.qMin + ".png";
+
+        document.getElementsByName("qMax")[0].getElementsByTagName("p")[0].innerText = "Tier " + this.qMax;
+        document.getElementsByName("qMax")[0].getElementsByTagName("img")[0].src = "graphics/tier" + this.qMax + ".png";
+        document.getElementsByName("eCrafts")[0].getElementsByTagName("p")[0].innerText = this.eCrafts;
     };
 }
 

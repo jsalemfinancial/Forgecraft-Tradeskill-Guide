@@ -44,6 +44,11 @@ body {
     z-index: -1;
 } */
 
+.flex-break {
+    flex-basis: 100%;
+    width: 0;
+}
+
 #menu-grid {
     display: grid;
 
@@ -64,6 +69,7 @@ body {
 
 #menu-grid div p {
     color: white;
+    filter: drop-shadow(-0.15vw 0.1vh 0 rgb(37, 37, 37));
 }
 
 #menu-grid div h1 {
@@ -193,8 +199,9 @@ body {
     width: 100%;
 
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     
 }
