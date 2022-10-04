@@ -127,22 +127,22 @@ document.querySelectorAll("input").forEach(input => {
 
 document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
     variable.addEventListener('mouseover', async () => {
-        if (variable.getAttribute("name") == "iBonus") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration.txt")
+        if (variable.getAttribute("name") == "qMin") {
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/min_quality.txt")
                 .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerText = text);       
+                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);       
         };
 
         if (variable.getAttribute("name") == "qMax") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/quality.txt")
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/max_quality.txt")
                 .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerText = text);            
+                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);            
         };
 
         if (variable.getAttribute("name") == "eCrafts") {
             await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
                 .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("h1")[0].innerText = text);             
+                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
         };
     });
 });

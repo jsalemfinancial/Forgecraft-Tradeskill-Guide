@@ -5,11 +5,6 @@
     src: url("../fonts/big_noodle_titling.ttf");
 }
 
-@keyframes menuAnimation {
-    from {right: 0}
-    to {right: 5vw}
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,9 +16,7 @@
 
 body {
     color: #FFD700;
-    background-image: url("../graphics/dragonflight_background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: black;
 
     width: 100vw;
     height: 100vh;
@@ -33,43 +26,93 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
-/* #vid {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-} */
+div p {
+    color: white;
 
+    font-size: 1vw;
+    filter: drop-shadow(-0.15vw 0.1vh 0 rgb(37, 37, 37));
+}
 .flex-break {
     flex-basis: 100%;
     width: 0;
+}
+
+#body-background {
+    position: absolute;
+
+    background-image: url("../graphics/dragonflight_background.jpg");
+    background-attachment: fixed;
+    background-position: 20% 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 110vw;
+    height: 110vh;
+    z-index: -1;
+    filter: blur(0.2vw) contrast(120%);
+}
+
+#navbar-layer-one {
+    width: 100vw;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    z-index: 0;
+    filter: drop-shadow(0 0.5vh 1vw black);
+}
+
+#navbar-layer-two {
+    position: absolute;
+
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    z-index: 5;
+
+    opacity: 0.25;
+    background-image: url("../graphics/background-g3c1c995e9_1920.jpg");
+    background-size: cover;
+    filter: contrast(150%);
+}
+
+#navbar-content {
+    position: absolute;
+
+    font-size: 2vw;
+
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #menu-grid {
     display: grid;
 
     width: 90vw;
-    height: 90vh;
-    padding: 1vw;
+    height: 80vh;
 
     grid-template-columns: 25vw 40vw 25vw;
-    grid-template-rows: 15vh 75vh;
-    grid-template-areas:
+    grid-template-rows: 20vh 40vh 20vh;
+    /* grid-template-areas:
         "header header  header"
-        "main-left  footer  main-right";
-    gap: 1vw;
+        "main-left  footer  main-right"; */
+    grid-template-areas:
+    "main-left  header  main-right"
+    "main-left  header  main-right"
+    "footer     footer  footer";
 
     justify-content: center;
-    align-content: center;
-}
-
-#menu-grid div p {
-    color: white;
-    filter: drop-shadow(-0.15vw 0.1vh 0 rgb(37, 37, 37));
 }
 
 #menu-grid div h1 {
@@ -77,63 +120,6 @@ body {
 
     filter: drop-shadow(-0.15vw 0.1vh 0 rgb(37, 37, 37));
 }
-
-/* .menu-bar {
-    background-color: white;
-
-    width: 2vw;
-    height: 0.23vw;
-    margin: 0.1vw 0;
-}
-
-#menu-rod {
-    position: absolute;
-    background-color: #FFD700;
-
-    top: 0.5vh;
-    left: 1vw;
-    width: 3vw;
-    height: 0.5vw;
-    z-index: 1;
-}
-
-#menu-options {
-    position: absolute;
-
-    font-size: 1vw;
-    opacity: 0;
-
-    top: 1vw;
-    left: 6vw;
-    width: 10vw;
-    height: 5vw;
-    z-index: 1;
-
-    display: flex;
-    flex-direction: column;
-}
-
-#dropdown {
-    position: absolute;
-
-    border-radius: 0.5em/0.5em;
-    background-color: #351703;
-
-    top: 0.5vh;
-    left: 0.5vw;
-    width: 5vw;
-    height: 2vw;
-    z-index: 5;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#dropdown:hover {
-    cursor: pointer;
-} */
 
 #grid-item-header {
     grid-area: header;
@@ -147,18 +133,17 @@ body {
     align-items: center;
 }
 
-#grid-item-header h1 {
-    border: 2vw solid transparent;
-    border-image-source: url("../graphics/test_container.svg");
-    border-image-slice: 25%;
-    background-image: linear-gradient(to right, #ffffff00, #35170300 5%, rgba(97, 21, 8, 0.30) 50%, #35170300 95%,#ffffff00);
+#grid-item-header > img {
+    width: 40vw;
+    height: 40vh;
+    filter: drop-shadow(0 1vh 2vw black) contrast(115%);
 }
 
 #grid-item-content-left {
     grid-area: main-left;
 
     font-size: 1vw;
-    margin: 4vw;
+    margin: 0 4vw;
     padding: 1vw;
 
     display: flex;
@@ -185,7 +170,7 @@ body {
     grid-area: main-right;
 
     font-size: 1vw;
-    margin: 4vw;
+    margin: 0vw 4vw;
     padding: 1vw;
     /* background-image: linear-gradient(to right, #35170300 10%, #3517035e); */
 
@@ -201,8 +186,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: flex-end;
     
 }
 
@@ -214,7 +199,7 @@ body {
 #grid-item-footer {
     grid-area: footer;
 
-    margin: 4vw 0;
+    margin: 0 4vw;
     padding: 1vw;
     /* background-image: linear-gradient(to right, #35170300, #3517035e 50%, #35170300); */
 
@@ -224,8 +209,46 @@ body {
     align-items: center;
 }
 
-#grid-item-footer h1 {
-    font-size: 2vw;
+#grid-item-footer p {
+    font-size: 1.5vw;
+}
+
+#footer-layer-one {
+    position: absolute;
+    background-color: black;
+
+    width: 100vw;
+    height: 10vh;
+    bottom: 0;
+    z-index: 0;
+    filter: drop-shadow(0 -0.5vh 1vw black);
+}
+
+#footer-layer-two {
+    position: absolute;
+    background-image: url("../graphics/background-g3c1c995e9_1920.jpg");
+    background-size: cover;
+
+    width: 100vw;
+    height: 10vh;
+    bottom: 0;
+    z-index: 5;
+    opacity: 0.25;
+    filter: contrast(150%);
+}
+
+#footer {
+    position: absolute;
+
+    width: 100vw;
+    height: 10vh;
+    bottom: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #twitch-player-container {
@@ -237,7 +260,7 @@ body {
     bottom: 0;
     right: 0;
 
-    z-index: 1;
+    z-index: 100;
 }
 
 #twitch-player {
@@ -247,14 +270,14 @@ body {
     width: 100%;
     height: 100%;
 
-    z-index: 2;
+    z-index: 100;
 }
 
 #twitch-player-minimize {
     position: absolute;
     font-size: 1vw;
     color: white;
-    z-index: 3;
+    z-index: 101;
 
     top: -0.25vh;
     left: 0.5vw;
@@ -274,7 +297,7 @@ body {
     
     right: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 100;
 
     fill: purple;
     /* background-image: url("../graphics/twitch-icon.svg");
