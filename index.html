@@ -16,7 +16,18 @@
         <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
     </svg>
 
-    <div id="dropdown">
+    <div style="width: 100%; font-size: 1vw; height: 3vh; position: absolute; top: 0; background-color: maroon; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+        <span>Test1</span>
+        <span>Test2</span>
+        <span>Test3</span>
+        <span>Test4</span>
+    </div>
+
+    <!-- <video autoplay muted loop id="vid">
+        <source src="graphics/2022-10-03_00-18-00.mp4" type="video/mp4">
+    </video> -->
+
+    <!-- <div id="dropdown">
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
@@ -27,7 +38,8 @@
     <div id="menu-options">
         <h1>Calculator</h1>
         <h1>Tutorial</h1>
-    </div>
+        <h1>Guides</h1>
+    </div> -->
 
     <div id="twitch-player-container">
         <span id="twitch-player-minimize">&#128469;</span>
@@ -44,7 +56,7 @@
 
     <div id="menu-grid">
         <div id="grid-item-header">
-            <h1>WoW Crafting Applet</h1>
+            <h1>Forgecraft Tradeskill Guide</h1>
         </div>
         
         <div id="grid-item-content-left">
@@ -59,30 +71,35 @@
             </label>
 
             <label for="iProb">
-                <h1>Inspiration Probability</h1>
-                <input type="number" step="0.01" min="0.01" pattern="\d" name="iProb"/>
+                <h1>Inspiration Prob. ( % )</h1>
+                <input type="number" step="1" min="0" pattern="\d" name="iProb"/>
             </label>
         </div>
 
         <div id="grid-item-content-right">
             <label name="iBonus">
                 <h1>Inspiration Bonus</h1>
-                <p>Stuff</p>
+                <p>-</p>
+            </label>
+
+            <label name="qMin">
+                <h1>Min Quality</h1>
+                <p>-</p>
             </label>
 
             <label name="qMax">
                 <h1>Max Quality</h1>
-                <p>Stuff+</p>
+                <p>-</p>
             </label>
 
             <label name="eCrafts">
                 <h1>Expected Crafts</h1>
-                <p>Stuff++^2</p>
+                <p>-</p>
             </label>
         </div>
 
         <div id="grid-item-footer">
-            <h1>Dynamic Descriptions When Hovering Here, Probably.</h1>
+            <h1>Hover or tap on terms for descriptions.</h1>
         </div>
     </div>
 
