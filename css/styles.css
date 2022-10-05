@@ -74,7 +74,7 @@ div p {
     top: 0;
     z-index: 5;
 
-    opacity: 0.25;
+    opacity: 0.15;
     background-image: url("../graphics/background-g3c1c995e9_1920.jpg");
     background-size: cover;
     filter: contrast(150%);
@@ -232,7 +232,7 @@ div p {
     height: 10vh;
     bottom: 0;
     z-index: 5;
-    opacity: 0.25;
+    opacity: 0.15;
     filter: contrast(150%);
 }
 
