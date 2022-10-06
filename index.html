@@ -7,23 +7,35 @@
     <meta name="author" content="Joseph Salem, Tyler Peterman, Jedith">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/calculator_styles.css">
+    <link rel="stylesheet" href="css/global_styles.css">
+    <link rel="stylesheet" href="css/mobile_styles.css">
 </head>
 
 <body>
     <div id="body-background"></div>
 
+    <!-- Navbar -->
+
     <div id="navbar-layer-one"></div>
     <div id="navbar-layer-two"></div>
 
     <div id="navbar-content">
-        <span>About</span>
-        <span>Calculator</span>
-        <span>Tutorial</span>
-        <span>Guides</span>
+        <h1>about</h1>
+        <h1>calculator</h1>
+        <h1>tutorial</h1>
+        <h1>guides</h1>
     </div>
 
-    <div id="menu-grid">
+    <!-- About -->
+
+    <div id ="about"> 
+
+    </div>
+
+    <!-- Calculator -->
+
+    <div id="calculator">
         <div id="grid-item-header">
             <img src="graphics/forgecraft_logo.png">
         </div>
@@ -40,34 +52,28 @@
             </label>
 
             <label for="iProb">
-                <h1>Inspiration Prob. ( % )</h1>
+                <h1>Inspiration Prob. %</h1>
                 <input type="number" step="1" min="0" pattern="\d" name="iProb"/>
             </label>
         </div>
 
         <div id="grid-item-content-right">
-            <!-- <label name="iBonus">
-                <h1>Inspiration Bonus</h1>
-                <span class="flex-break"></span>
-                <p>-</p>
-            </label> -->
-
             <label name="qMin">
                 <h1>Min Quality</h1>
                 <span class="flex-break"></span>
-                <p>-</p><img>
+                <span><h2>-</h2><img></span>
             </label>
 
             <label name="qMax">
                 <h1>Max Quality</h1>
                 <span class="flex-break"></span>
-                <p>-</p><img>
+                <span><h2>-</h2><img></span>
             </label>
 
             <label name="eCrafts">
                 <h1>Expected Crafts</h1>
                 <span class="flex-break"></span>
-                <p>-</p>
+                <span><h2>-</h2></span>
             </label>
         </div>
 
@@ -76,12 +82,28 @@
         </div>
     </div>
 
+    <!-- Tutorial -->
+
+    <div id ="tutorial"> 
+
+    </div>
+
+    <!-- Guides -->
+
+    <div id ="guides"> 
+
+    </div>
+
+    <!-- Footer -->
+
     <div id="footer-layer-one"></div>
     <div id="footer-layer-two"></div>
 
     <div id="footer">
         <p>Footer Stuff Goes Here.</p>
     </div>
+
+    <!-- Twitch Stream -->
 
     <svg id="stream-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z"/>

@@ -1,8 +1,17 @@
-// main calculation script
+// Master content controller class.
 
+let Controller = new class {
+    constructor() {
+        this.calculator = document.getElementById("calculator-menu-grid");
+    };
 
+    changeTab(tab) {
+        this[tab].style.display = "none";
+    }
+};
 
 // Calculator class.
+
 let Calculate = new class {
     constructor() {
         this.cSkill = null; // Crafting Skill.
@@ -19,7 +28,7 @@ let Calculate = new class {
         this.t3Ratio = 2.8;
         this.t2Ratio = 1.6;
         this.eCrafts = 0; // Expected Crafts.
-    }
+    };
 
     getParams() {
         this.iBonus = this.cDiff/6;
@@ -72,16 +81,15 @@ let Calculate = new class {
     };
 
     display() {
-        // document.getElementsByName("iBonus")[0].getElementsByTagName("p")[0].innerText = (this.iBonus).toFixed(2);
-
-        document.getElementsByName("qMin")[0].getElementsByTagName("p")[0].innerText = "Tier " + this.qMin;
+        document.getElementsByName("qMin")[0].getElementsByTagName("h2")[0].innerText = "Tier " + this.qMin;
         document.getElementsByName("qMin")[0].getElementsByTagName("img")[0].src = "graphics/tier" + this.qMin + ".png";
 
-        document.getElementsByName("qMax")[0].getElementsByTagName("p")[0].innerText = "Tier " + this.qMax;
+        document.getElementsByName("qMax")[0].getElementsByTagName("h2")[0].innerText = "Tier " + this.qMax;
         document.getElementsByName("qMax")[0].getElementsByTagName("img")[0].src = "graphics/tier" + this.qMax + ".png";
-        document.getElementsByName("eCrafts")[0].getElementsByTagName("p")[0].innerText = this.eCrafts;
+        document.getElementsByName("eCrafts")[0].getElementsByTagName("h2")[0].innerText = this.eCrafts;
     };
-}
+};
+
 
 // Initial globals for stream.
 
@@ -103,17 +111,21 @@ const INIT_MINIMIZE = setTimeout(async () => {
 
 // Event listeners
 
-// document.querySelectorAll("input").forEach(input => {
-//     input.addEventListener('input', () => {
-//         Calculate[input.getAttribute("name")] = parseFloat(input.value);
-
-//         if (typeof(Calculate.cSkill) == "number" && typeof(Calculate.cDiff) == "number" && typeof(Calculate.iProb) == "number") {
-//             Calculate.getParams();
-//             Calculate.geteCrafts();
-//             Calculate.display();
-//         };
-//     });
-// });
+document.getElementById("navbar-content").querySelectorAll("h1").forEach(option => {
+    option.addEventListener('click', () => {
+        if (option.innerText == "about") {
+            alert(option.innerText);
+        } else if (option.innerText == "calculator") {
+            Controller.changeTab(option.innerText);
+        } else if (option.innerText == "tutorial") {
+            alert(option.innerText);
+        } else if (option.innerText == "guides"){
+            alert(option.innerText);
+        } else {
+            alert("Something Went Wrong!")
+        };
+    });
+});
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener('input', () => {
@@ -155,26 +167,26 @@ document.getElementById("stream-link").addEventListener("click", async () => {
     document.getElementById("twitch-player-container").style.bottom = "0";
 });
 
-document.getElementById("dropdown").addEventListener("click", async () => {
-    var menuRod = document.getElementById("menu-rod");
-    var menuOptions = document.getElementById("menu-options");
+// document.getElementById("dropdown").addEventListener("click", async () => {
+//     var menuRod = document.getElementById("menu-rod");
+//     var menuOptions = document.getElementById("menu-options");
 
-    menuRod.style.transition = "padding 0.25s";
-    menuRod.style.backgroundColor = "#FFD700";
+//     menuRod.style.transition = "padding 0.25s";
+//     menuRod.style.backgroundColor = "#FFD700";
     
-    if (menuOptions.style.opacity == 0) {
-        menuRod.style.padding = "0 15vw 0 0";
+//     if (menuOptions.style.opacity == 0) {
+//         menuRod.style.padding = "0 15vw 0 0";
 
-        setTimeout(async () => {
-            menuRod.style.transition = ""
-            menuOptions.style.transition = "opacity 0.25s";
-            menuOptions.style.opacity = "1";
-        }, 250);
-    } else {
-        menuOptions.style.opacity = "0";
+//         setTimeout(async () => {
+//             menuRod.style.transition = ""
+//             menuOptions.style.transition = "opacity 0.25s";
+//             menuOptions.style.opacity = "1";
+//         }, 250);
+//     } else {
+//         menuOptions.style.opacity = "0";
 
-        setTimeout(async () => {
-            menuRod.style.padding = "0 0 0 0";
-        }, 250);
-    }
-});
+//         setTimeout(async () => {
+//             menuRod.style.padding = "0 0 0 0";
+//         }, 250);
+//     }
+// });

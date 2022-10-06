@@ -1,0 +1,59 @@
+@media only screen and ((orientation: portrait) or (max-width: 700px)) {
+
+    h1 {
+        font-size: 2.5vh;
+    
+        filter: drop-shadow(-0.15vh 0vw 0 rgb(37, 37, 37));
+    }
+    
+    h2 {
+        font-size: 2.5vh;
+    
+        filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
+    }
+
+    p {
+        font-size: 1.75vh;
+    
+        filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
+    }
+
+    input {
+        font-size: 1.5vh;
+    }
+
+    #calculator {
+        display: grid;
+    
+        width: 90vw;
+        height: 80vh;
+    
+        grid-template-columns: 45vw 45vw;
+        grid-template-rows: 20vh 40vh 20vh;
+        grid-template-areas:
+        "header header"
+        "main-left  main-right"
+        "footer footer";
+    
+        justify-content: center;
+    }
+
+    #grid-item-header img {
+        max-width: 90vw;
+        max-height: 20vh;
+    }
+
+    #grid-item-content-left label input {
+        width: 6vh;
+        height: 2vh;
+    }
+
+    #grid-item-content-right label img {
+        max-width: 4vw;
+        max-height: 4vh;
+    }
+
+    #grid-item-footer {
+        margin: 0 5vw;
+    }
+  }
