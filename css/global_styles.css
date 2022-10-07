@@ -187,7 +187,7 @@ input {
 #twitch-player-minimize {
     position: absolute;
     font-size: 1vw;
-    color: white;
+    color: purple;
     z-index: 101;
 
     top: -0.25vh;

@@ -52,6 +52,7 @@
     }
 
     #grid-item-footer {
+        justify-content: flex-start;
         margin: 0 5vw;
     }
 
@@ -79,7 +80,7 @@
     
     #twitch-player-minimize {
         position: absolute;
-        font-size: 2vh;
+        font-size: 4vw;
         color: white;
         z-index: 101;
     
