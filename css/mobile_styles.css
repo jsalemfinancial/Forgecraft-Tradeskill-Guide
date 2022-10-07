@@ -41,11 +41,18 @@
         max-height: 15vh;
     }
 
+    #grid-item-content-left {
+        justify-content: flex-start;
+    }
+
     #grid-item-content-left label input {
         width: 6vw;
         height: 2vh;
     }
 
+    #grid-item-content-right {
+        justify-content: flex-start;
+    }
     #grid-item-content-right label img {
         max-width: 4vw;
         max-height: 4vh;
