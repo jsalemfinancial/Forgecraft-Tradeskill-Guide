@@ -1,6 +1,6 @@
 /* Mobile style sheet */
 
-@media only screen and ((orientation: portrait) or (max-width: 700px)) {
+@media (orientation: portrait) or (max-width: 700px) {
 
     h1 {
         font-size: 2.5vh;
@@ -42,7 +42,7 @@
     }
 
     #grid-item-content-left label input {
-        width: 6vh;
+        width: 6vw;
         height: 2vh;
     }
 
