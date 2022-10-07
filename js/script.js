@@ -2,12 +2,24 @@
 
 let Controller = new class {
     constructor() {
-        this.calculator = document.getElementById("calculator-menu-grid");
+        this.about = document.getElementById("about");
+        this.calculator = document.getElementById("calculator");
+        this.tutorial = document.getElementById("tutorial");
+        this.guide = document.getElementById("guide");
+        this.tabArray = [this.about, this.calculator, this.tutorial, this.guide];
     };
 
     changeTab(tab) {
-        this[tab].style.display = "none";
-    }
+        for (let i = 0; i < this.tabArray.length; i++) {
+            this.tabArray[i].style.display = "none";
+        }
+
+        if (tab == "calculator") {
+            this[tab].style.display = "grid";
+        } else {
+            this[tab].style.display = "flex";
+        }
+    };
 };
 
 // Calculator class.
@@ -17,9 +29,6 @@ let Calculate = new class {
         this.cSkill = null; // Crafting Skill.
         this.cDiff = null; // Crafting Difficulty.
         this.iProb = null; // Inspiration Probability.
-        // this.sIMax = 0; // Skill Level Cap by Inspiration.
-        // this.sLMax = 0; // Skill Level Cap by Level.
-        // this.sFinal = 0; //Final Decided Crafting Skill.
         this.qMax = 1; // Max Quality.
         this.qMin = 1; // Guaranteed Quality.
         this.iBonus = 0; // Inspiration Bonus.
@@ -111,19 +120,9 @@ const INIT_MINIMIZE = setTimeout(async () => {
 
 // Event listeners
 
-document.getElementById("navbar-content").querySelectorAll("h1").forEach(option => {
-    option.addEventListener('click', () => {
-        if (option.innerText == "about") {
-            alert(option.innerText);
-        } else if (option.innerText == "calculator") {
-            Controller.changeTab(option.innerText);
-        } else if (option.innerText == "tutorial") {
-            alert(option.innerText);
-        } else if (option.innerText == "guides"){
-            alert(option.innerText);
-        } else {
-            alert("Something Went Wrong!")
-        };
+document.getElementById("navbar-content").querySelectorAll("h1").forEach(tab => {
+    tab.addEventListener('click', () => {
+        Controller.changeTab(tab.innerText);
     });
 });
 
@@ -157,6 +156,14 @@ document.getElementById("grid-item-content-right").querySelectorAll("label").for
                 .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
         };
     });
+});
+
+window.addEventListener('load', async () => {
+    console.log("Guide loaded!")
+    await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guide.txt")
+        .then(response => response.text())
+        .then(text => document.getElementById("guide-text").innerText = text);
+
 });
 
 document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
