@@ -15,7 +15,7 @@
     }
 
     p {
-        font-size: 1vh;
+        font-size: 1.75vh;
     
         filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
     }
@@ -64,6 +64,7 @@
 
     #grid-item-footer {
         justify-content: flex-start;
+        background-color: red;
         margin: 0 5vw;
     }
 
