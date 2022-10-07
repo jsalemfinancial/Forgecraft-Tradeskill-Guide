@@ -20,6 +20,10 @@
         filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
     }
 
+    input {
+        font-size: 1vh;
+    }
+
     #calculator {
         display: grid;
     
@@ -46,7 +50,7 @@
     }
 
     #grid-item-content-left label input {
-        width: 6vw;
+        width: 10vw;
         height: 2vh;
     }
 
