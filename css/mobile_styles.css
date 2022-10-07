@@ -3,13 +3,13 @@
 @media (orientation: portrait), (max-width: 700px) {
 
     h1 {
-        font-size: 2vh;
+        font-size: 3vh;
     
         filter: drop-shadow(-0.15vh 0vw 0 rgb(37, 37, 37));
     }
     
     h2 {
-        font-size: 2vh;
+        font-size: 3vh;
     
         filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
     }
@@ -31,7 +31,7 @@
         height: 80vh;
     
         grid-template-columns: 45vw 45vw;
-        grid-template-rows: 20vh 40vh 20vh;
+        grid-template-rows: 25vh 25vh 30vh;
         grid-template-areas:
         "header header"
         "main-left  main-right"
@@ -49,10 +49,10 @@
         justify-content: flex-start;
     }
 
-    #grid-item-content-left label input {
+    /* #grid-item-content-left label input {
         width: 10vw;
         height: 2vh;
-    }
+    } */
 
     #grid-item-content-right {
         justify-content: flex-start;
@@ -64,7 +64,6 @@
 
     #grid-item-footer {
         justify-content: flex-start;
-        background-color: red;
         margin: 0 5vw;
     }
 
