@@ -136,7 +136,7 @@ document.querySelectorAll("input").forEach(input => {
     });
 });
 
-document.getElementById("grid-item-content-right").querySelectorAll("label").forEach(variable => {
+document.getElementById("calculator").querySelectorAll("label").forEach(variable => {
     variable.addEventListener('mouseover', async () => {
         if (variable.getAttribute("name") == "qMin") {
             await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/min_quality.txt")
@@ -157,19 +157,19 @@ document.getElementById("grid-item-content-right").querySelectorAll("label").for
         };
 
         if (variable.getAttribute("name") == "cDiffLabel") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_difficulty.txt")
                 .then(response => response.text())
                 .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
         };
 
         if (variable.getAttribute("name") == "cSkillLabel") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_skill.txt")
                 .then(response => response.text())
                 .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
         };
 
         if (variable.getAttribute("name") == "iProbLabel") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
+            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration_prob.txt")
                 .then(response => response.text())
                 .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
         };
