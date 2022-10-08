@@ -1,1 +1,2 @@
-Nisl pretium fusce id velit. Consectetur libero id faucibus nisl tincidunt eget. Gravida dictum fusce ut placerat orci nulla pellentesque. Nunc id cursus metus aliquam eleifend mi in nulla posuere. Vel fringilla est ullamcorper eget nulla. Habitant morbi tristique senectus et netus et malesuada. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Mi bibendum neque egestas congue quisque egestas. Justo laoreet sit amet cursus sit amet dictum. Accumsan tortor posuere ac ut consequat semper.
+This is the expected number of crafts to trigger inspirtion. Simply, it is 1/p where
+p is the inspiration probability.

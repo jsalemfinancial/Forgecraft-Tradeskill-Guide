@@ -1,0 +1,2 @@
+This is your crafting skill with all items and reagent bonuses. It is the skill you see
+in the crafting menu.
