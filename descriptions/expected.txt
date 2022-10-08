@@ -1,2 +1,1 @@
-This is the expected number of crafts to trigger inspirtion. Simply, it is 1/p where
-p is the inspiration probability.
+This is the expected number of crafts to trigger inspirtion. Simply, it is 1/p where p is the inspiration probability.
