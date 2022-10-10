@@ -1,7 +1,7 @@
 /* Mobile style sheet */
 
 @media only screen and (orientation: portrait),
-    (max-width: 900px) {
+    (max-width: 1500px) {
 
         html, body {
             position: relative;
