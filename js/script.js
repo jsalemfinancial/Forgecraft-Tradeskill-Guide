@@ -39,37 +39,64 @@ let Calculate = new class {
         this.eCrafts = 0; // Expected Crafts.
     };
 
-    getParams() {
-        this.iBonus = this.cDiff/6;
-        this.qGap = this.cDiff/4;
-        // this.sIMax = Math.floor(this.cSkill/this.iBonus)*this.iBonus;
-        // this.sLMax = Math.floor(this.cSkill/this.qGap)*this.qGap;
-        // this.sFinal = Math.max(this.sIMax, this.sLMax);
-        // this.qMax = Math.floor(5 - (this.cDiff - (this.cSkill + this.iBonus))/this.qGap);
-
-        if (this.cDiff - this.cSkill <= 0) {
-            this.qMin = 5;
-        } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t4Ratio) {
-            this.qMin = 4;
-        } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t3Ratio) {
-            this.qMin = 3;
-        } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t2Ratio) {
-            this.qMin = 2;
-        } else {
-            this.qMin = 1;
-        };
-
+    getMax() {
         if (this.cSkill + this.iBonus > this.cDiff) {
             this.qMax = 5;
-        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t4Ratio - 1)/this.t4Ratio) {
+        } else if (this.cSkill + this.iBonus > Math.ceil(0.8545*this.cDiff - 2.0909)) {
             this.qMax = 4;
-        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t3Ratio - 1)/this.t3Ratio) {
+        } else if (this.cSkill + this.iBonus > Math.ceil((22/35)*this.cSkill - 47/7)) {
             this.qMax = 3;
-        } else if (this.cSkill + this.iBonus > this.cDiff*(this.t2Ratio - 1)/this.t2Ratio) {
+        } else if (this.cSkill + this.iBonus > Math.ceil(0.4*this.cSkill - 1)) {
             this.qMax = 2;
         } else {
             this.qMax = 1;
         };
+    };
+
+    getMin() {
+        if (this.cDiff - this.cSkill <= 0) {
+            this.qMin = 5;
+        } else if (Math.ceil(0.8545*this.cDiff - 2.0909) < this.cSkill) {
+            this.qMin = 4;
+        } else if (Math.ceil((22/35)*this.cSkill - 47/7) < this.cSkill) {
+            this.qMin = 3;
+        } else if (Math.ceil(0.4*this.cSkill - 1) < this.cSkill) {
+            this.qMin = 2;
+        } else {
+            this.qMin = 1;
+        };
+    };
+
+    getParams() {
+        this.iBonus = this.cDiff/6;
+        this.qGap = this.cDiff/4;
+
+        this.getMax();
+        this.getMin();
+        
+        // if (this.cDiff - this.cSkill <= 0) {
+        //     this.qMin = 5;
+        // } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t4Ratio) {
+        //     this.qMin = 4;
+        // } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t3Ratio) {
+        //     this.qMin = 3;
+        // } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t2Ratio) {
+        //     this.qMin = 2;
+        // } else {
+        //     this.qMin = 1;
+        // };
+
+        // if (this.cSkill + this.iBonus > this.cDiff) {
+        //     this.qMax = 5;
+        // } else if (this.cSkill + this.iBonus > this.cDiff*(this.t4Ratio - 1)/this.t4Ratio) {
+        //     this.qMax = 4;
+        // } else if (this.cSkill + this.iBonus > this.cDiff*(this.t3Ratio - 1)/this.t3Ratio) {
+        //     this.qMax = 3;
+        // } else if (this.cSkill + this.iBonus > this.cDiff*(this.t2Ratio - 1)/this.t2Ratio) {
+        //     this.qMax = 2;
+        // } else {
+        //     this.qMax = 1;
+        // };
     };
 
     geteCrafts() {  
