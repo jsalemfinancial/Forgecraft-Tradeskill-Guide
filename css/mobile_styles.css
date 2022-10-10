@@ -1,6 +1,6 @@
 /* Mobile style sheet */
 
-@media only screen and (orientation: portrait) or ((max-width: 800px) or (max-device-width: 800px)) {
+@media only screen and (orientation: portrait) or ((max-width: 800px) or (device-width: 800px)) {
 
     html, body {
         position: relative;
