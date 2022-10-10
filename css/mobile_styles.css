@@ -5,7 +5,7 @@
     zoom: 1;
 }
 
-@media only screen and ((orientation: portrait) and (max-width: 600px)) {
+@media only screen and ((orientation: portrait) and (max-width: 800px)) {
 
     html, body {
         position: relative;
