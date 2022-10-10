@@ -1,6 +1,6 @@
 /* Mobile style sheet */
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 
         html, body {
             position: relative;
