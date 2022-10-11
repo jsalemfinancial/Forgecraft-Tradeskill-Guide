@@ -1,10 +1,5 @@
 /* Main style sheet */
 
-@viewport {
-    width: device-width;
-    zoom: 1;
-}
-
 @font-face {
     font-family: "Big Noodle Titling";
     src: url("../fonts/big_noodle_titling.ttf");
