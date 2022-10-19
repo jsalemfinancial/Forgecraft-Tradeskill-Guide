@@ -36,6 +36,7 @@ a {
 
     fill: inherit;
 }
+
 h1 {
     color: #FFD700;
     font-weight: normal;
@@ -54,7 +55,7 @@ h2 {
 
 p {
     color: white;
-    font-size: 1.75vw;
+    font-size: 200%;
 
     filter: drop-shadow(-0.10vw 0vh 0 rgb(37, 37, 37));
 }
@@ -171,35 +172,51 @@ input {
     align-items: center;
 }
 
-#paypal-link {
+#paypal-link, #pateron-link {
     position: relative;
 
-    max-width: 10%;
-    max-height: 30%;
+    height: 100%;
 
-    margin: 0 1.25%;
+    margin: 0 1.25% 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#paypal-link svg{
+    position: relative;
+
+    height: 50%;
+
+    margin: 0 5%;
 
     fill: #0070ba;
 }
 
-#paypal-link a:hover {
+#paypal-link:hover {
     cursor: pointer;
-    fill: #0099ff
 }
 
-#pateron-link {
+#paypal-link:hover svg {
+    fill: #0099ff;
+}
+
+#pateron-link svg {
     position: relative;
 
-    max-width: 10%;
-    max-height: 30%;
+    height: 50%;
 
-    margin: 0 1.25%;
+    margin: 0 5%;
 
     fill: #ff424b;
 }
 
-#pateron-link a:hover {
+#pateron-link:hover {
     cursor: pointer;
+}
+
+#pateron-link:hover svg{
     fill: #ff6169;
 }
 
@@ -243,8 +260,8 @@ input {
 #stream-link {
     position: absolute;
 
-    max-width: 10%;
-    max-height: 30%;
+    max-width: 20%;
+    max-height: 50%;
 
     right: 7.5%;
 

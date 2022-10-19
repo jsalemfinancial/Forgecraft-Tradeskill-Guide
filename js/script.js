@@ -205,8 +205,7 @@ window.addEventListener("load", () => {
     });
     
     window.addEventListener('load', async () => {
-        console.log("Guide loaded!")
-        await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guide.txt")
+        await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guides.txt")
             .then(response => response.text())
             .then(text => document.getElementById("guide-text").innerText = text);
     

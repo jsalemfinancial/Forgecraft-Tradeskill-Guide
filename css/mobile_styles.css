@@ -27,7 +27,7 @@
         }
 
         p {
-            font-size: 1.75vh;
+            font-size: 100%;
         
             filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
         }
