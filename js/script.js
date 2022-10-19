@@ -147,75 +147,76 @@ const INIT_MINIMIZE = setTimeout(async () => {
                     }, 5000);
 
 // Event listeners
-
-document.getElementById("navbar-content").querySelectorAll("h1").forEach(tab => {
-    tab.addEventListener('click', () => {
-        Controller.changeTab(tab.innerText);
+window.addEventListener("load", () => {
+    document.getElementById("navbar-content").querySelectorAll("h1").forEach(tab => {
+        tab.addEventListener('click', () => {
+            Controller.changeTab(tab.innerText);
+        });
     });
-});
-
-document.querySelectorAll("input").forEach(input => {
-    input.addEventListener('input', () => {
-        Calculate[input.getAttribute("name")] = parseFloat(input.value);
-
-        Calculate.getParams();
-        Calculate.geteCrafts();
-        Calculate.display();
+    
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener('input', () => {
+            Calculate[input.getAttribute("name")] = parseFloat(input.value);
+    
+            Calculate.getParams();
+            Calculate.geteCrafts();
+            Calculate.display();
+        });
     });
-});
-
-document.getElementById("calculator").querySelectorAll("label").forEach(variable => {
-    variable.addEventListener('mouseover', async () => {
-        if (variable.getAttribute("name") == "qMin") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/min_quality.txt")
-                .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);       
-        };
-
-        if (variable.getAttribute("name") == "qMax") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/max_quality.txt")
-                .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);            
-        };
-
-        if (variable.getAttribute("name") == "eCrafts") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
-                .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
-        };
-
-        if (variable.getAttribute("name") == "cDiffLabel") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_difficulty.txt")
-                .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
-        };
-
-        if (variable.getAttribute("name") == "cSkillLabel") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_skill.txt")
-                .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
-        };
-
-        if (variable.getAttribute("name") == "iProbLabel") {
-            await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration_prob.txt")
-                .then(response => response.text())
-                .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
-        };
+    
+    document.getElementById("calculator").querySelectorAll("label").forEach(variable => {
+        variable.addEventListener('mouseover', async () => {
+            if (variable.getAttribute("name") == "qMin") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/min_quality.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);       
+            };
+    
+            if (variable.getAttribute("name") == "qMax") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/max_quality.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);            
+            };
+    
+            if (variable.getAttribute("name") == "eCrafts") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+    
+            if (variable.getAttribute("name") == "cDiffLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_difficulty.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+    
+            if (variable.getAttribute("name") == "cSkillLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_skill.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+    
+            if (variable.getAttribute("name") == "iProbLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration_prob.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+        });
     });
-});
-
-window.addEventListener('load', async () => {
-    console.log("Guide loaded!")
-    await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guide.txt")
-        .then(response => response.text())
-        .then(text => document.getElementById("guide-text").innerText = text);
-
-});
-
-document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
-
-document.getElementById("stream-link").addEventListener("click", async () => {
-    document.getElementById("stream-link").style.display = "none";
-    document.getElementById("twitch-player-container").style.transition = "bottom 0.5s";
-    document.getElementById("twitch-player-container").style.bottom = "0";
+    
+    window.addEventListener('load', async () => {
+        console.log("Guide loaded!")
+        await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guide.txt")
+            .then(response => response.text())
+            .then(text => document.getElementById("guide-text").innerText = text);
+    
+    });
+    
+    document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
+    
+    document.getElementById("stream-link").addEventListener("click", async () => {
+        document.getElementById("stream-link").style.display = "none";
+        document.getElementById("twitch-player-container").style.transition = "bottom 0.5s";
+        document.getElementById("twitch-player-container").style.bottom = "0";
+    });
 });
