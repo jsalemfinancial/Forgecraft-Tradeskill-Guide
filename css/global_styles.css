@@ -30,6 +30,12 @@ body {
     align-items: center;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+
+    fill: inherit;
+}
 h1 {
     color: #FFD700;
     font-weight: normal;
@@ -153,20 +159,55 @@ input {
 
     width: 100vw;
     height: 10vh;
+
+    margin: 0 0 0 10%;
+
     bottom: 0;
     z-index: 10;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+
+#paypal-link {
+    position: relative;
+
+    max-width: 10%;
+    max-height: 30%;
+
+    margin: 0 1.25%;
+
+    fill: #0070ba;
+}
+
+#paypal-link a:hover {
+    cursor: pointer;
+    fill: #0099ff
+}
+
+#pateron-link {
+    position: relative;
+
+    max-width: 10%;
+    max-height: 30%;
+
+    margin: 0 1.25%;
+
+    fill: #ff424b;
+}
+
+#pateron-link a:hover {
+    cursor: pointer;
+    fill: #ff6169;
 }
 
 #twitch-player-container {
     position: fixed;
 
-    width: 20vw;
-    height: 20vh;
+    width: 25vw;
+    height: 25vh;
 
     bottom: 0;
     right: 0;
@@ -186,34 +227,31 @@ input {
 
 #twitch-player-minimize {
     position: absolute;
-    font-size: 1vw;
-    color: purple;
+    font-size: 3vw;
+    color: #5c16c5;
     z-index: 101;
 
-    top: -0.25vh;
+    top: -1vh;
     left: 0.5vw;
 }
 
 #twitch-player-minimize:hover {
-    color: purple;
+    color: #954eff;;
     cursor: pointer;
 }
 
 #stream-link {
-    display: none;
     position: absolute;
 
-    width: 5vw;
-    height: 5vh;
-    
-    right: 0;
-    bottom: 0;
-    z-index: 100;
+    max-width: 10%;
+    max-height: 30%;
 
-    fill: purple;
+    right: 7.5%;
+
+    fill: #5c16c5;
 }
 
 #stream-link:hover {
     cursor: pointer;
-    fill: violet;
+    fill: #954eff;
 }

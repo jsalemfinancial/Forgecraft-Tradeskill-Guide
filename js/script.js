@@ -5,8 +5,8 @@ let Controller = new class {
         this.about = document.getElementById("about");
         this.calculator = document.getElementById("calculator");
         this.tutorial = document.getElementById("tutorial");
-        this.guide = document.getElementById("guide");
-        this.tabArray = [this.about, this.calculator, this.tutorial, this.guide];
+        this.guides = document.getElementById("guides");
+        this.tabArray = [this.about, this.calculator, this.tutorial, this.guides];
     };
 
     changeTab(tab) {
@@ -16,6 +16,7 @@ let Controller = new class {
 
         if (tab == "calculator") {
             this[tab].style.display = "grid";
+            this[tab].style.justifyContent = "start";
         } else {
             this[tab].style.display = "flex";
         }
@@ -133,7 +134,7 @@ async function twitchMinimize() {
     clearTimeout(INIT_MINIMIZE);
 
     document.getElementById("twitch-player-container").style.transition = "bottom 1s";
-    document.getElementById("twitch-player-container").style.bottom = "-20vh";
+    document.getElementById("twitch-player-container").style.bottom = "-30vh";
 
     setTimeout(async () => {
         document.getElementById("stream-link").style.display = "flex";
@@ -218,27 +219,3 @@ document.getElementById("stream-link").addEventListener("click", async () => {
     document.getElementById("twitch-player-container").style.transition = "bottom 0.5s";
     document.getElementById("twitch-player-container").style.bottom = "0";
 });
-
-// document.getElementById("dropdown").addEventListener("click", async () => {
-//     var menuRod = document.getElementById("menu-rod");
-//     var menuOptions = document.getElementById("menu-options");
-
-//     menuRod.style.transition = "padding 0.25s";
-//     menuRod.style.backgroundColor = "#FFD700";
-    
-//     if (menuOptions.style.opacity == 0) {
-//         menuRod.style.padding = "0 15vw 0 0";
-
-//         setTimeout(async () => {
-//             menuRod.style.transition = ""
-//             menuOptions.style.transition = "opacity 0.25s";
-//             menuOptions.style.opacity = "1";
-//         }, 250);
-//     } else {
-//         menuOptions.style.opacity = "0";
-
-//         setTimeout(async () => {
-//             menuRod.style.padding = "0 0 0 0";
-//         }, 250);
-//     }
-// });

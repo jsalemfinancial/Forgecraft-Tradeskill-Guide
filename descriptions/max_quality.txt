@@ -1,1 +1,1 @@
-This is your approximated maximum possible craft quality. If when inspiration triggers and the bonus is enough, then this is higher than the minimum. 
+This is your approximated maximum possible quality craft, assuming Inspiration triggers with a high enough bonus

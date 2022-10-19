@@ -5,7 +5,7 @@
     zoom: 1;
 }
 
-@media only screen and (max-width: 500px),
+@media only screen and (max-width: 600px),
     only screen and (orientation: portrait) {
 
         html, body {
@@ -61,11 +61,6 @@
             justify-content: flex-start;
         }
 
-        /* #grid-item-content-left label input {
-            width: 10vw;
-            height: 2vh;
-        } */
-
         #grid-item-content-right {
             justify-content: flex-start;
         }
@@ -82,8 +77,8 @@
         #twitch-player-container {
             position: fixed;
         
-            width: 40vw;
-            height: 20vh;
+            width: 50vw;
+            height: 25vh;
         
             bottom: 0;
             right: 0;
@@ -104,38 +99,22 @@
         #twitch-player-minimize {
             position: absolute;
             font-size: 4vw;
-            color: white;
-            z-index: 101;
         
             top: -0.25vh;
             left: 0.5vw;
+
+            z-index: 101;
         }
-        
-        #twitch-player-minimize:hover {
-            color: purple;
-            cursor: pointer;
+
+        #footer-layer-one {
+            height: 5vh;
         }
-        
-        #stream-link {
-            display: none;
-            position: absolute;
-        
-            max-width: 10vw;
-            max-height: 10vh;
-            
-            right: 0;
-            bottom: 0;
-            z-index: 100;
-        
-            fill: purple;
-            /* background-image: url("../graphics/twitch-icon.svg");
-            background-size: 50%;
-            background-position: center;
-            background-repeat: no-repeat; */
+
+        #footer-layer-two {
+            height: 5vh;
         }
-        
-        #stream-link:hover {
-            cursor: pointer;
-            fill: violet;
+
+        #footer {
+            height: 5vh;
         }
     }
