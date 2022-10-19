@@ -207,7 +207,7 @@ window.addEventListener("load", () => {
     window.addEventListener('load', async () => {
         await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guides.txt")
             .then(response => response.text())
-            .then(text => document.getElementById("guide-text").innerText = text);
+            .then(text => document.getElementById("guides-text").innerText = text);
     
     });
     
