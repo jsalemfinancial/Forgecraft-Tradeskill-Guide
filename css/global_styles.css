@@ -126,9 +126,7 @@ input {
 
 #navbar-content h1:hover {
     cursor: pointer;
-    color: orangered;
-
-    transform: scale(120%);
+    transform: scale(110%);
 }
 
 #footer-layer-one {
