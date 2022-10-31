@@ -146,7 +146,63 @@ const INIT_MINIMIZE = setTimeout(async () => {
                         twitchMinimize();
                     }, 5000);
 
+// YouTube Embed
+
+// 1. Create Div tag to be replaced.
+
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('body-background', {
+        height: '390',
+        width: '640',
+        videoId: 'oHDRwPiYnes',
+        playerVars: {
+            modestbranding: 1,
+            mute: 1,
+            autoplay: 1,
+            controls: 0,
+            showinfo: 0,
+            wmode: 'transparent',
+            branding: 0,
+            rel: 0,
+            autohide: 0,
+            origin: window.location.origin
+        },
+        events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+        }
+    });
+};
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.playVideo();
+};
+
+// 5. The API calls this function when the player's state changes.
+function onPlayerStateChange(event) {
+
+    if (event.data == YT.PlayerState.ENDED) {
+        console.log("video done!");
+        player.seekTo(0);
+    }
+};
+
+function stopVideo() {
+    player.stopVideo();
+};
 // Event listeners
+
 window.addEventListener("load", () => {
     document.getElementById("navbar-content").querySelectorAll("h1").forEach(tab => {
         tab.addEventListener('click', () => {
