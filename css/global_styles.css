@@ -15,10 +15,11 @@
 }
 
 body {
+    position: relative;
     color: #FFD700;
     background-color: black;
 
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
 
@@ -72,16 +73,22 @@ input {
 #body-background {
     position: absolute;
 
-    /* background-image: url("../graphics/dragonflight_background.jpg");
-    background-attachment: fixed;
-    background-position: 20% 20%;
-    background-size: cover;
-    background-repeat: no-repeat; */
-
-    width: 110vw;
-    height: 110vh;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 177vh;
+    margin-left: -3%;
     z-index: -1;
+
+    overflow: hidden;
+
+    /* Centering and transfomration trick floating around the internet. Clever. */
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     filter: contrast(120%);
+    -webkit-filter: contrast(120%);
 }
 
 #navbar-layer-one {
@@ -176,7 +183,9 @@ input {
     font-size: max(1.5vw, 1.5vh);
 }
 
-#paypal-link, #pateron-link {
+/* Social Links */
+
+#paypal-link, #pateron-link, #twitter-link, #youtube-link {
     position: relative;
 
     height: 100%;
@@ -192,14 +201,9 @@ input {
     position: relative;
 
     height: 50%;
-
     margin: 0 5%;
 
     fill: #0070ba;
-}
-
-#paypal-link:hover {
-    cursor: pointer;
 }
 
 #paypal-link:hover svg {
@@ -210,18 +214,43 @@ input {
     position: relative;
 
     height: 50%;
-
     margin: 0 5%;
 
     fill: #ff424b;
 }
 
-#pateron-link:hover {
-    cursor: pointer;
-}
-
 #pateron-link:hover svg{
     fill: #ff6169;
+}
+
+#twitter-link svg {
+    position: relative;
+
+    height: 50%;
+    margin: 0 5%;
+    
+    fill: #1d9bf0;
+}
+
+#twitter-link:hover svg {
+    fill: #3aaefc;
+}
+
+#youtube-link svg {
+    position: relative;
+
+    height: 50%;
+    margin: 0 5%;
+    
+    fill: #c00;
+}
+
+#youtube-link:hover svg {
+    fill: #eb1515;
+}
+
+#paypal-link:hover, #patreon-link:hover, #twitter-link:hover, #youtube-link:hover {
+    cursor: pointer;
 }
 
 #twitch-player-container {

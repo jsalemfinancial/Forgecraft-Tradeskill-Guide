@@ -162,19 +162,17 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('body-background', {
-        height: '390',
-        width: '640',
         videoId: 'oHDRwPiYnes',
         playerVars: {
             modestbranding: 1,
             mute: 1,
             autoplay: 1,
+            autohide: 1,
             controls: 0,
             showinfo: 0,
             wmode: 'transparent',
             branding: 0,
             rel: 0,
-            autohide: 0,
             origin: window.location.origin
         },
         events: {
@@ -184,7 +182,8 @@ function onYouTubeIframeAPIReady() {
     });
 };
 
-// 4. The API will call this function when the video player is ready.
+// 4. The API will call this function when the video player is ready. 
+//      It's here if needed -- Joe.
 function onPlayerReady(event) {
     event.target.playVideo();
 };
