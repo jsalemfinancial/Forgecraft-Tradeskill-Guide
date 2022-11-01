@@ -177,7 +177,7 @@ function onYouTubeIframeAPIReady() {
         },
         events: {
         'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
+        // 'onStateChange': onPlayerStateChange
         }
     });
 };
@@ -186,7 +186,7 @@ function onYouTubeIframeAPIReady() {
 //      It's here if needed -- Joe.
 function onPlayerReady(event) {
     event.target.playVideo();
-    
+
     setInterval(() => {
         player.seekTo(0);
     }, 39000);
