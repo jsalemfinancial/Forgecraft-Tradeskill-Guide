@@ -191,10 +191,16 @@ function onPlayerReady(event) {
 // 5. The API calls this function when the player's state changes.
 function onPlayerStateChange(event) {
 
-    if (event.data == YT.PlayerState.ENDED) {
+    // if (event.data == YT.PlayerState.ENDED) {
+    //     console.log("video done!");
+    //     player.seekTo(0);
+    // }
+
+    console.log(player.getCurrentTime());
+    if (player.getCurrentTime() > 5) {
         console.log("video done!");
         player.seekTo(0);
-    }
+    };
 };
 
 function stopVideo() {
