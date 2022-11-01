@@ -187,7 +187,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
     setInterval(() => {
         player.seekTo(0);
-    }, 3000);
+    }, 39000);
 };
 
 // 5. The API calls this function when the player's state changes.
