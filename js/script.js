@@ -185,6 +185,8 @@ function onYouTubeIframeAPIReady() {
 // 4. The API will call this function when the video player is ready. 
 //      It's here if needed -- Joe.
 function onPlayerReady(event) {
+    event.target.playVideo();
+    
     setInterval(() => {
         player.seekTo(0);
     }, 39000);
@@ -193,15 +195,12 @@ function onPlayerReady(event) {
 // 5. The API calls this function when the player's state changes.
 function onPlayerStateChange(event) {
 
-    // if (event.data == YT.PlayerState.ENDED) {
-    //     console.log("video done!");
-    //     player.seekTo(0);
-    // }
 };
 
 function stopVideo() {
     player.stopVideo();
 };
+
 // Event listeners
 
 window.addEventListener("load", () => {
