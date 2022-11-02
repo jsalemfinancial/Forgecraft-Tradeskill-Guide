@@ -45,9 +45,9 @@ let Calculate = new class {
             this.qMax = 5;
         } else if (this.cSkill + this.iBonus > Math.ceil(0.8545*this.cDiff - 2.0909)) {
             this.qMax = 4;
-        } else if (this.cSkill + this.iBonus > Math.ceil((22/35)*this.cSkill - 47/7)) {
+        } else if (this.cSkill + this.iBonus > Math.ceil((22/35)*this.cDiff - 47/7)) {
             this.qMax = 3;
-        } else if (this.cSkill + this.iBonus > Math.ceil(0.4*this.cSkill - 1)) {
+        } else if (this.cSkill + this.iBonus > Math.ceil(0.4*this.cDiff - 1)) {
             this.qMax = 2;
         } else {
             this.qMax = 1;
@@ -59,9 +59,9 @@ let Calculate = new class {
             this.qMin = 5;
         } else if (Math.ceil(0.8545*this.cDiff - 2.0909) < this.cSkill) {
             this.qMin = 4;
-        } else if (Math.ceil((22/35)*this.cSkill - 47/7) < this.cSkill) {
+        } else if (Math.ceil((22/35)*this.cDiff - 47/7) < this.cSkill) {
             this.qMin = 3;
-        } else if (Math.ceil(0.4*this.cSkill - 1) < this.cSkill) {
+        } else if (Math.ceil(0.4*this.cDiff - 1) < this.cSkill) {
             this.qMin = 2;
         } else {
             this.qMin = 1;
@@ -69,41 +69,18 @@ let Calculate = new class {
     };
 
     getParams() {
-        this.iBonus = this.cDiff/6;
+        if (document.getElementsByName("iType")[0].selectedIndex == 0) {
+            this.iBonus = this.cDiff/6;
+        } else {
+            this.iBonus = this.cDiff/3;
+        }
         this.qGap = this.cDiff/4;
 
         this.getMax();
         this.getMin();
-        
-        // if (this.cDiff - this.cSkill <= 0) {
-        //     this.qMin = 5;
-        // } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t4Ratio) {
-        //     this.qMin = 4;
-        // } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t3Ratio) {
-        //     this.qMin = 3;
-        // } else if (this.cDiff/(this.cDiff - this.cSkill) > this.t2Ratio) {
-        //     this.qMin = 2;
-        // } else {
-        //     this.qMin = 1;
-        // };
-
-        // if (this.cSkill + this.iBonus > this.cDiff) {
-        //     this.qMax = 5;
-        // } else if (this.cSkill + this.iBonus > this.cDiff*(this.t4Ratio - 1)/this.t4Ratio) {
-        //     this.qMax = 4;
-        // } else if (this.cSkill + this.iBonus > this.cDiff*(this.t3Ratio - 1)/this.t3Ratio) {
-        //     this.qMax = 3;
-        // } else if (this.cSkill + this.iBonus > this.cDiff*(this.t2Ratio - 1)/this.t2Ratio) {
-        //     this.qMax = 2;
-        // } else {
-        //     this.qMax = 1;
-        // };
     };
 
     geteCrafts() {  
-        // this.eCrafts = Math.ceil(Math.log(1 - ((this.cDiff - (this.sFinal + this.qGap*(5 - this.qMax))))/this.iBonus)/Math.log(1 - this.iProb));
-        // this.eCrafts = (this.eCrafts < 0) ? 0 : this.eCrafts;
-        // this.eCrafts = (this.eCrafts != this.eCrafts) ? 0 : this.eCrafts;
 
         if (this.qMax == this.qMin) {
             this.eCrafts = 0;
@@ -193,9 +170,9 @@ function onPlayerReady(event) {
 };
 
 // 5. The API calls this function when the player's state changes.
-function onPlayerStateChange(event) {
+// function onPlayerStateChange(event) {
 
-};
+// };
 
 function stopVideo() {
     player.stopVideo();
