@@ -1,0 +1,96 @@
+// Event listeners
+
+window.addEventListener("load", () => {
+
+    // Changing Tabs -- Non-array Method.
+
+    document.getElementById("navbar-content").querySelectorAll("h1").forEach(tab => {
+        tab.addEventListener('click', () => {
+            Controller.changeTab(tab.innerText);
+        });
+    });
+    
+    // Collect Inputs on Input Change
+
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener('change', () => {
+            Calculate.getParams();
+            Calculate.geteCrafts();
+            Calculate.display();
+        });
+    });
+
+    // Collect Inputs on Type Change
+
+    document.getElementsByName("iType")[0].addEventListener('change', () => {
+        Calculate.getParams();
+        Calculate.geteCrafts();
+        Calculate.display();
+    });
+    
+    document.getElementById("calculator").querySelectorAll("label").forEach(variable => {
+        variable.addEventListener('mouseover', async () => {
+            if (variable.getAttribute("name") == "qMinLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/min_quality.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);       
+            };
+    
+            if (variable.getAttribute("name") == "qMaxLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/max_quality.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);            
+            };
+    
+            if (variable.getAttribute("name") == "eCraftsLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+    
+            if (variable.getAttribute("name") == "cDiffLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_difficulty.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+    
+            if (variable.getAttribute("name") == "cSkillLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_skill.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+    
+            if (variable.getAttribute("name") == "iProbLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration_prob.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+        });
+    });
+    
+    document.getElementById("advanced-button").addEventListener("click", () => {
+        document.getElementsByName("iBonusTotal")[0].getElementsByTagName("h2")[0].innerText = (Calculate.iBonus).toFixed(2);
+        document.getElementsByName("skillToNext")[0].getElementsByTagName("h2")[0].innerText = Math.ceil(Calculate.skillToNext);
+
+        document.getElementById("advanced-lightbox").style.display = "flex";
+    });
+
+    document.getElementById("advanced-lightbox-close").addEventListener("click", () => {
+        document.getElementById("advanced-lightbox").style.display = "";
+    });
+
+    // window.addEventListener('load', async () => {
+    //     await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guides.txt")
+    //         .then(response => response.text())
+    //         .then(text => document.getElementById("guides-text").innerText = text);
+    
+    // });
+    
+    document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
+    
+    document.getElementById("stream-link").addEventListener("click", async () => {
+        document.getElementById("stream-link").style.display = "none";
+        document.getElementById("twitch-player-container").style.transition = "bottom 0.5s";
+        document.getElementById("twitch-player-container").style.bottom = "0";
+    });
+});

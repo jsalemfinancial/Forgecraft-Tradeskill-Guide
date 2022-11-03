@@ -56,13 +56,18 @@ h2 {
 
 p {
     color: white;
-    font-size: 200%;
+    font-size: 2em;
 
-    filter: drop-shadow(-0.10vw 0vh 0 rgb(37, 37, 37));
+    filter: drop-shadow(-0.05em 0vh 0 rgb(37, 37, 37));
 }
 
-input {
-    font-size: 2vh;
+input, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 1.5vh;
+
+    border: none;
 }
 
 .flex-break {
@@ -136,6 +141,7 @@ input {
 #navbar-content h1:hover {
     cursor: pointer;
     transform: scale(110%);
+    -webkit-transform: scale(110%);
 }
 
 #footer-layer-one {
@@ -181,127 +187,4 @@ input {
 
 #footer p {
     font-size: max(1.5vw, 1.5vh);
-}
-
-/* Social Links */
-
-#paypal-link, #pateron-link, #twitter-link, #youtube-link {
-    position: relative;
-
-    height: 100%;
-
-    margin: 0 1.25% 0 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#paypal-link svg{
-    position: relative;
-
-    height: 50%;
-    margin: 0 5%;
-
-    fill: #0070ba;
-}
-
-#paypal-link:hover svg {
-    fill: #0099ff;
-}
-
-#pateron-link svg {
-    position: relative;
-
-    height: 50%;
-    margin: 0 5%;
-
-    fill: #ff424b;
-}
-
-#pateron-link:hover svg{
-    fill: #ff6169;
-}
-
-#twitter-link svg {
-    position: relative;
-
-    height: 50%;
-    margin: 0 5%;
-    
-    fill: #1d9bf0;
-}
-
-#twitter-link:hover svg {
-    fill: #3aaefc;
-}
-
-#youtube-link svg {
-    position: relative;
-
-    height: 50%;
-    margin: 0 5%;
-    
-    fill: #c00;
-}
-
-#youtube-link:hover svg {
-    fill: #eb1515;
-}
-
-#paypal-link:hover, #patreon-link:hover, #twitter-link:hover, #youtube-link:hover {
-    cursor: pointer;
-}
-
-#twitch-player-container {
-    position: fixed;
-
-    width: 25vw;
-    height: 25vh;
-
-    bottom: 0;
-    right: 0;
-
-    z-index: 100;
-}
-
-#twitch-player {
-    position: absolute;
-    text-size-adjust: none;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 100;
-}
-
-#twitch-player-minimize {
-    position: absolute;
-    font-size: 3vw;
-    color: #5c16c5;
-    z-index: 101;
-
-    top: -1vh;
-    left: 0.5vw;
-}
-
-#twitch-player-minimize:hover {
-    color: #954eff;;
-    cursor: pointer;
-}
-
-#stream-link {
-    position: absolute;
-
-    max-width: 20%;
-    max-height: 50%;
-
-    right: 7.5%;
-
-    fill: #5c16c5;
-}
-
-#stream-link:hover {
-    cursor: pointer;
-    fill: #954eff;
 }

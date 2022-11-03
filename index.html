@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="css/tutorial_styles.css">
     <link rel="stylesheet" href="css/calculator_styles.css">
     <link rel="stylesheet" href="css/about_styles.css">
+    <link rel="stylesheet" href="css/socials_styles.css">
     <link rel="stylesheet" href="css/global_styles.css">
     <link rel="stylesheet" href="css/mobile_styles.css">
+
+    <script src="js/yt-script.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -66,27 +69,36 @@
 
             <label name="iProbLabel" for="iProb">
                 <h1>Inspiration %</h1>
-                <input type="number" step="1" min="0" pattern="\d" name="iProb"/>
+                <input type="number" step="1" min="0" pattern="\d" value="10" name="iProb"/>
+            </label>
+
+            <label name="iSklRgtBonusLabel" for="iSkillBonus">
+                <h1>Inspiration Skill Bonus %</h1>
+                <input type="number" step="1" min="0" pattern="\d" value="100" name="iSklRgtBonus"/>
             </label>
         </div>
 
         <div id="grid-item-content-right">
-            <label name="qMin">
+            <label name="qMinLabel">
                 <h1>Min Quality</h1>
                 <span class="flex-break"></span>
                 <span><h2>-</h2><img></span>
             </label>
 
-            <label name="qMax">
+            <label name="qMaxLabel">
                 <h1>Max Quality</h1>
                 <span class="flex-break"></span>
                 <span><h2>-</h2><img></span>
             </label>
 
-            <label name="eCrafts">
+            <label name="eCraftsLabel">
                 <h1>Expected Crafts</h1>
                 <span class="flex-break"></span>
                 <span><h2>-</h2></span>
+            </label>
+
+            <label name="advancedLabel">
+                <h1 id="advanced-button">Advanced</h1>
             </label>
         </div>
 
@@ -95,6 +107,23 @@
         </div>
     </div>
 
+    <!-- Lightbox for Calculator-->
+    <div id="advanced-lightbox">
+        <div id="advanced-lightbox-close">&#215;</div>
+        <div id="advanced-info-container">
+            <label name="iBonusTotal">
+                <h1>Inspiration Bonus Total</h1>
+                <span class="flex-break"></span>
+                <span><h2>-</h2><img></span>
+            </label>
+
+            <label name="skillToNext">
+                <h1>Crafting Skill Until Next Quality Level</h1>
+                <span class="flex-break"></span>
+                <span><h2>-</h2><img></span>
+            </label>
+        </div>
+    </div>
     <!-- Tutorial -->
 
     <div id ="tutorial"> 
@@ -217,7 +246,8 @@
             </iframe>
     </div>
 
-    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/main-script.js" type="text/javascript"></script>
+    <script src="js/event-listeners.js" type="text/javascript"></script>
 </body>
 
 </html>
