@@ -98,9 +98,9 @@ let Calculate = new class {
         this.iSklRgtBonus = parseFloat(document.getElementsByName("iSklRgtBonus")[0].value);
 
         if (document.getElementsByName("iType")[0].selectedIndex == 0) {
-            this.iBonus = this.cDiff/6 * (this.iSklRgtBonus/100);
+            this.iBonus = this.cDiff/6 * (1 + this.iSklRgtBonus/100);
         } else {
-            this.iBonus = this.cDiff/3 * (this.iSklRgtBonus/100);
+            this.iBonus = this.cDiff/3 * (1 + this.iSklRgtBonus/100);
         }
 
         this.getMax();
