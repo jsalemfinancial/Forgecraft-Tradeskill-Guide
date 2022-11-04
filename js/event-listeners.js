@@ -59,9 +59,21 @@ window.addEventListener("load", () => {
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
-    
+
+            if (variable.getAttribute("name") == "iProbLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration_prob.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+
             if (variable.getAttribute("name") == "iSklRgtBonusLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/skill_reagent_bonus.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
+
+            if (variable.getAttribute("name") == "advancedLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/advanced.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };

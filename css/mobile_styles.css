@@ -14,25 +14,7 @@
             overflow: hidden;
         }
 
-        h1 {
-            font-size: 3vh;
-        
-            filter: drop-shadow(-0.15vh 0vw 0 rgb(37, 37, 37));
-        }
-        
-        h2 {
-            font-size: 3vh;
-        
-            filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
-        }
-
-        p {
-            font-size: 100%;
-        
-            filter: drop-shadow(-0.10vh 0vw 0 rgb(37, 37, 37));
-        }
-
-        input {
+        input, select {
             font-size: 1vh;
         }
 
@@ -70,7 +52,7 @@
         }
 
         #grid-item-footer {
-            justify-content: flex-start;
+            justify-content: center;
             margin: 0 5vw;
         }
 
