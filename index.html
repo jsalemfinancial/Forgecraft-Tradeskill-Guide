@@ -9,7 +9,6 @@
     <meta name="author" content="Joseph Salem, Tyler Peterman, Jedith">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/guide_styles.css">
     <link rel="stylesheet" href="css/tutorial_styles.css">
     <link rel="stylesheet" href="css/calculator_styles.css">
     <link rel="stylesheet" href="css/about_styles.css">
@@ -32,13 +31,13 @@
         <h1>about</h1>
         <h1>calculator</h1>
         <h1>tutorial</h1>
-        <h1>guides</h1>
     </div>
 
     <!-- About -->
 
-    <div id="about"> 
-        <p>test1</p>
+    <div id="about">
+        <h1>Welcome to Forgecraft!</h1>
+        <p></p>
     </div>
 
     <!-- Calculator -->
@@ -69,7 +68,7 @@
 
             <label name="iProbLabel" for="iProb">
                 <h1>Inspiration %</h1>
-                <input type="number" step="1" min="0" pattern="\d" value="10" name="iProb"/>
+                <input type="number" step="1" min="0" pattern="\d" value="5" name="iProb"/>
             </label>
 
             <label name="iSklRgtBonusLabel" for="iSkillBonus">
@@ -108,6 +107,7 @@
     </div>
 
     <!-- Lightbox for Calculator-->
+
     <div id="advanced-lightbox">
         <div id="advanced-lightbox-close">&#215;</div>
         <div id="advanced-info-container">
@@ -117,8 +117,14 @@
                 <span><h2>-</h2><img></span>
             </label>
 
-            <label name="skillToNext">
-                <h1>Crafting Skill Until Next Quality Level</h1>
+            <label name="skillToNextMin">
+                <h1>Crafting Skill Until Next Min Quality Level</h1>
+                <span class="flex-break"></span>
+                <span><h2>-</h2><img></span>
+            </label>
+
+            <label name="skillToNextMax">
+                <h1>Crafting Skill Until Next Max Quality Level</h1>
                 <span class="flex-break"></span>
                 <span><h2>-</h2><img></span>
             </label>
@@ -130,19 +136,6 @@
         <p>test2</p>
     </div>
 
-    <!-- Guides -->
-
-    <div id ="guides">
-        <div id="guides-navbar">
-            <h1>Blacksmithing</h1>
-            <h1>Leatherworking</h1>
-            <h1>Enchanting</h1>
-            <h1>Jewelcrafting</h1>
-            <h1>Inscribing</h1>
-        </div>
-        <p id="guides-text"></p>
-    </div>
-
     <!-- Footer -->
 
     <div id="footer-layer-one"></div>
@@ -150,8 +143,6 @@
 
     <div id="footer">
         <a id="pateron-link" target="_blank" href="https://www.patreon.com/jedith">
-            <p>Patreon</p>
-
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
                 <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free
                     (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -159,11 +150,11 @@
                     <path d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6
                             82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z"/>
             </svg>
+
+            <p>Patreon</p>
         </a>
 
         <a id="paypal-link" target="_blank" href="https://www.paypal.com/donate/?business=4R4HAZR59A4ZJ&no_recurring=0&item_name=Any+small+donation+is+appreciated+as+the+donations+go+to+working+on+project+like+this+in+the+future.&currency_code=USD">
-            <p>Paypal</p>
-
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384 512">
                 <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free
                     (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -175,11 +166,11 @@
                             12.9h63.5c8.6 0 15.7-6.3 17.4-14.9.7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3
                             6.5-34.8 4.6-71.4-23.8-92.6z"/>
             </svg>
+
+            <p>Paypal</p>
         </a>
 
         <a id="twitter-link" target="_blank" href="https://twitter.com/Jedithtv?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-            <p>Twitter</p>
-
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free
                     (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -195,11 +186,11 @@
                             0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 
                             24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
             </svg>
+
+            <p>Twitter</p>
         </a>
 
         <a id="youtube-link" target="_blank" href="https://www.youtube.com/c/Jedithtv/featured">
-            <p>YouTube</p>
-
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                 <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free
                     (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -213,6 +204,8 @@
                     <path style="fill:#ffffff;stroke-width:5.66929;stroke:none;fill-opacity:1"
                         d="M 232.145,175.185 374.884,256.39 232.145,337.591 Z"/>
             </svg>
+
+            <p>YouTube</p>
         </a>
 
         <svg id="stream-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -232,13 +225,14 @@
     </div>
 
     <!-- Twitch Stream -->
+    <!-- Old Link: jsalemfinancial.github.io&parent=pages.github.com&parent=github.com -->
 
     <div id="twitch-player-container">
         <span id="twitch-player-minimize">-</span>
 
             <iframe
                 id="twitch-player"
-                src="https://player.twitch.tv/?channel=jedith&parent=jsalemfinancial.github.io&parent=pages.github.com&parent=github.com"
+                src="https://player.twitch.tv/?channel=jedith&parent=forgecraft.io&parent=google.com"
                 muted="true"
                 frameborder="0"
                 scrolling="no"

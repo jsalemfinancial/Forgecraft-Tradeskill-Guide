@@ -5,8 +5,7 @@ let Controller = new class {
         this.about = document.getElementById("about");
         this.calculator = document.getElementById("calculator");
         this.tutorial = document.getElementById("tutorial");
-        this.guides = document.getElementById("guides");
-        this.tabArray = [this.about, this.calculator, this.tutorial, this.guides];
+        this.tabArray = [this.about, this.calculator, this.tutorial];
     };
 
     changeTab(tab) {
@@ -32,7 +31,8 @@ let Calculate = new class {
         this.iProb = null; // Inspiration Probability.
         this.qMax = 1; // Max Quality.
         this.qMin = 1; // Guaranteed Quality.
-        this.skillToNext = 0; //Skill Until Next Quality Level.
+        this.skillToNextMax = 0; //Skill Until Next Max Quality Level.
+        this.skillToNextMin = 0; //Skill Until Next Min Quality Level.
         this.iBonus = 0; // Inspiration Bonus.
         this.iSklRgtBonus = 100; // Skill and Reagent Increase to Inspiration Bonus.
         this.eCrafts = 0; // Expected Crafts for Max Quality.
@@ -42,27 +42,30 @@ let Calculate = new class {
         if (document.getElementsByName("iType")[0].selectedIndex == 0) {
             if (this.cSkill + this.iBonus >= this.cDiff) {
                 this.qMax = 5;
-                this.skillToNext = 0;
+                this.skillToNextMax = 0;
             } else if (this.cSkill + this.iBonus > 0.8*this.cDiff - 1) {
                 this.qMax = 4;
-                this.skillToNext = (this.cDiff - this.cSkill - this.iBonus)
+                this.skillToNextMax = (this.cDiff - this.cSkill - this.iBonus);
             } else if (this.cSkill + this.iBonus > 0.5*this.cDiff) {
                 this.qMax = 3;
-                this.skillToNext = (0.8*this.cDiff - this.cSkill - this.iBonus - 1)
+                this.skillToNextMax = (0.8*this.cDiff - this.cSkill - this.iBonus - 1);
             } else if (this.cSkill + this.iBonus > 0.2*this.cDiff - 1) {
                 this.qMax = 2;
-                this.skillToNext = (0.5*this.cDiff - this.cSkill - this.iBonus)
+                this.skillToNextMax = (0.5*this.cDiff - this.cSkill - this.iBonus);
             } else {
                 this.qMax = 1;
-                this.skillToNext = (0.2*this.cDiff - this.cSkill - this.iBonus - 1)
+                this.skillToNextMax = (0.2*this.cDiff - this.cSkill - this.iBonus - 1);
             };
         } else {
             if (this.cSkill + this.iBonus > this.cDiff) {
                 this.qMax = 3;
+                this.skillToNextMax = 0;
             } else if (this.cSkill + this.iBonus > 0.5*this.cDiff) {
                 this.qMax = 2;
+                this.skillToNextMax = (this.cDiff - this.cSkill - this.iBonus);
             } else {
                 this.qMax = 1;
+                this.skillToNextMax = (0.5*this.cDiff - this.cSkill - this.iBonus);
             }
         }
     };
@@ -71,22 +74,30 @@ let Calculate = new class {
         if (document.getElementsByName("iType")[0].selectedIndex == 0) {
             if (this.cSkill >= this.cDiff) {
                 this.qMin = 5;
+                this.skillToNextMin = 0;
             } else if (this.cSkill > 0.8*this.cDiff - 1) {
                 this.qMin = 4;
+                this.skillToNextMin = (this.cDiff - this.cSkill);
             } else if (this.cSkill > 0.5*this.cDiff) {
                 this.qMin = 3;
+                this.skillToNextMin = (0.8*this.cDiff - this.cSkill - 1);
             } else if (this.cSkill > 0.2*this.cDiff - 1) {
                 this.qMin = 2;
+                this.skillToNextMin = (0.5*this.cDiff - this.cSkill);
             } else {
                 this.qMin = 1;
+                this.skillToNextMin = (0.2*this.cDiff - this.cSkill - 1);
             };
         } else {
             if (this.cSkill > this.cDiff) {
                 this.qMin = 3;
+                this.skillToNextMin = 0;
             } else if (this.cSkill > 0.5*this.cDiff) {
                 this.qMin = 2;
+                this.skillToNextMin = (this.cDiff - this.cSkill);
             } else {
                 this.qMin = 1;
+                this.skillToNextMin = (0.5*this.cDiff - this.cSkill);
             }
         }
     };

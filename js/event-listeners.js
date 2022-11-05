@@ -2,6 +2,11 @@
 
 window.addEventListener("load", () => {
 
+    // Fetch About Section Description.
+    fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/about_desc.txt")
+    .then(response => response.text())
+    .then(text => document.getElementById("about").getElementsByTagName("p")[0].innerText = text);  
+    
     // Changing Tabs -- Non-array Method.
 
     document.getElementById("navbar-content").querySelectorAll("h1").forEach(tab => {
@@ -77,12 +82,19 @@ window.addEventListener("load", () => {
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
+
+            if (variable.getAttribute("name") == "iTypeLabel") {
+                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/item_type.txt")
+                    .then(response => response.text())
+                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            };
         });
-    });
+    }); 
     
     document.getElementById("advanced-button").addEventListener("click", () => {
         document.getElementsByName("iBonusTotal")[0].getElementsByTagName("h2")[0].innerText = (Calculate.iBonus).toFixed(2);
-        document.getElementsByName("skillToNext")[0].getElementsByTagName("h2")[0].innerText = Math.ceil(Calculate.skillToNext);
+        document.getElementsByName("skillToNextMin")[0].getElementsByTagName("h2")[0].innerText = Math.ceil(Calculate.skillToNextMin);
+        document.getElementsByName("skillToNextMax")[0].getElementsByTagName("h2")[0].innerText = Math.ceil(Calculate.skillToNextMax);
 
         document.getElementById("advanced-lightbox").style.display = "flex";
     });
@@ -91,12 +103,9 @@ window.addEventListener("load", () => {
         document.getElementById("advanced-lightbox").style.display = "";
     });
 
-    // window.addEventListener('load', async () => {
-    //     await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/guides.txt")
-    //         .then(response => response.text())
-    //         .then(text => document.getElementById("guides-text").innerText = text);
-    
-    // });
+    document.getElementById("advanced-lightbox").addEventListener("click", () => {
+        document.getElementById("advanced-lightbox").style.display = "";
+    });
     
     document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
     

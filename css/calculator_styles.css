@@ -51,8 +51,13 @@
     justify-content: left;
 }
 
-#grid-item-content-left label input, #grid-item-content-left label select {
+#grid-item-content-left label input {
     width: 25%;
+    height: 2vh;
+}
+
+#grid-item-content-left label select {
+    width: 45%;
     height: 2vh;
 }
 

@@ -1,0 +1,1 @@
+Select whether or not the item is a piece of equipment (Max Quality 5).
