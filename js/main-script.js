@@ -16,6 +16,8 @@ let Controller = new class {
         if (tab == "calculator") {
             this[tab].style.display = "grid";
             this[tab].style.justifyContent = "start";
+        } else if (tab == "about") {
+            this[tab].style.display = "flex";
         } else {
             this[tab].style.display = "flex";
         }
