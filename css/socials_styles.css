@@ -1,6 +1,6 @@
 /* Social Links */
 
-#paypal-link, #pateron-link, #twitter-link, #ytube-link {
+#paypal-link, #pateron-link, #twtr-link, #ytube-link {
     position: relative;
 
     height: 100%;
@@ -38,7 +38,7 @@
     fill: #ff6169;
 }
 
-#twitter-link svg {
+#twtr-link svg {
     position: relative;
 
     height: 50%;
@@ -47,7 +47,7 @@
     fill: #1d9bf0;
 }
 
-#twitter-link:hover svg {
+#twtr-link:hover svg {
     fill: #3aaefc;
 }
 
@@ -64,7 +64,7 @@
     fill: #eb1515;
 }
 
-#paypal-link:hover, #patreon-link:hover, #twitter-link:hover, #ytube-link:hover {
+#paypal-link:hover, #patreon-link:hover, #twtr-link:hover, #ytube-link:hover {
     cursor: pointer;
 }
 
