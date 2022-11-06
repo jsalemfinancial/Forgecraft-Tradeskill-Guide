@@ -56,9 +56,9 @@ h2 {
 
 p {
     color: white;
-    font-size: 2em;
+    font-size: 2rem;
 
-    filter: drop-shadow(-0.05em 0vh 0 rgb(37, 37, 37));
+    filter: drop-shadow(-0.05rem 0 0 rgb(37, 37, 37));
 }
 
 input, select {

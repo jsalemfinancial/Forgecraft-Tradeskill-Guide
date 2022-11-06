@@ -56,6 +56,22 @@
             margin: 0 5vw;
         }
 
+        #footer-layer-one {
+            height: 5vh;
+        }
+
+        #footer-layer-two {
+            height: 5vh;
+        }
+
+        #footer {
+            height: 5vh;
+        }
+        
+        #about {
+            width: 90%;
+        }
+
         #twitch-player-container {
             position: fixed;
         
@@ -86,17 +102,5 @@
             left: 0.5vw;
 
             z-index: 101;
-        }
-
-        #footer-layer-one {
-            height: 5vh;
-        }
-
-        #footer-layer-two {
-            height: 5vh;
-        }
-
-        #footer {
-            height: 5vh;
         }
     }
