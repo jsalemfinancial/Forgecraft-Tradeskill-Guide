@@ -26,7 +26,7 @@
             display: grid;
         
             width: 90vw;
-            height: 80vh;
+            height: 85vh;
         
             grid-template-columns: 45vw 45vw;
             grid-auto-rows: minmax(25vh, auto);
@@ -41,7 +41,8 @@
 
         #grid-item-header img {
             max-width: 80vw;
-            max-height: 15vh;
+            max-height: 20vh;
+            margin: 5% 0 0 0;
         }
 
         #grid-item-content-left {
@@ -52,8 +53,8 @@
             justify-content: flex-start;
         }
         #grid-item-content-right label img {
-            max-width: 4vw;
-            max-height: 4vh;
+            max-width: max(4vw, 4vh);
+            max-height: max(4vh, 4vw);
         }
 
         #grid-item-footer {
