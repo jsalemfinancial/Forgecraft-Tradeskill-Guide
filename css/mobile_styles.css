@@ -14,6 +14,10 @@
             overflow: hidden;
         }
 
+        p {
+            font-size: 1rem;
+        }
+
         input, select {
             font-size: 1vh;
         }
@@ -25,13 +29,14 @@
             height: 80vh;
         
             grid-template-columns: 45vw 45vw;
-            grid-template-rows: 25vh 25vh 30vh;
+            grid-auto-rows: minmax(25vh, auto);
             grid-template-areas:
             "header header"
             "main-left  main-right"
             "footer footer";
-        
+
             justify-content: center;
+            align-items: flex-start;
         }
 
         #grid-item-header img {
@@ -52,7 +57,7 @@
         }
 
         #grid-item-footer {
-            justify-content: center;
+            justify-content: flex-start;
             margin: 0 5vw;
         }
 

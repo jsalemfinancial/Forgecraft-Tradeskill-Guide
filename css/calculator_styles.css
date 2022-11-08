@@ -105,6 +105,9 @@
     margin: 0 5vw;
     padding: 1vw;
 
+    overflow-y: auto;
+    max-height: 25vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;

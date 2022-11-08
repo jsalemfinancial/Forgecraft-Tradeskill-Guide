@@ -33,57 +33,57 @@ window.addEventListener("load", () => {
         Calculate.display();
     });
     
-    document.getElementById("calculator").querySelectorAll("label").forEach(variable => {
+    document.querySelectorAll("#calculator label h1").forEach(variable => {
         variable.addEventListener('mouseover', async () => {
-            if (variable.getAttribute("name") == "qMinLabel") {
+            if (variable.parentElement.getAttribute("name") == "qMinLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/min_quality.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);       
             };
     
-            if (variable.getAttribute("name") == "qMaxLabel") {
+            if (variable.parentElement.getAttribute("name") == "qMaxLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/max_quality.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);            
             };
     
-            if (variable.getAttribute("name") == "eCraftsLabel") {
+            if (variable.parentElement.getAttribute("name") == "eCraftsLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/expected.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
     
-            if (variable.getAttribute("name") == "cDiffLabel") {
+            if (variable.parentElement.getAttribute("name") == "cDiffLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_difficulty.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
     
-            if (variable.getAttribute("name") == "cSkillLabel") {
+            if (variable.parentElement.getAttribute("name") == "cSkillLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/crafting_skill.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
 
-            if (variable.getAttribute("name") == "iProbLabel") {
+            if (variable.parentElement.getAttribute("name") == "iProbLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/inspiration_prob.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
 
-            if (variable.getAttribute("name") == "iSklRgtBonusLabel") {
+            if (variable.parentElement.getAttribute("name") == "iSklRgtBonusLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/skill_reagent_bonus.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
 
-            if (variable.getAttribute("name") == "advancedLabel") {
+            if (variable.parentElement.getAttribute("name") == "advancedLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/advanced.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
 
-            if (variable.getAttribute("name") == "iTypeLabel") {
+            if (variable.parentElement.getAttribute("name") == "iTypeLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/item_type.txt")
                     .then(response => response.text())
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             

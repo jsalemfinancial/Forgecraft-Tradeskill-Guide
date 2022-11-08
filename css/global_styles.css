@@ -5,6 +5,16 @@
     src: url("../fonts/big_noodle_titling.ttf");
 }
 
+@font-face {
+    font-family: "Poppins Regular";
+    src: url("../fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins Medium";
+    src: url("../fonts/Poppins-Medium.ttf");
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,6 +51,7 @@ a {
 h1 {
     color: #FFD700;
     font-weight: normal;
+
     font-size: max(2.5vw, 2.5vh);
 
     filter: drop-shadow(-0.15vw 0vh 0 rgb(37, 37, 37));
@@ -58,7 +69,9 @@ p {
     color: white;
     font-size: 2rem;
 
-    filter: drop-shadow(-0.05rem 0 0 rgb(37, 37, 37));
+    font-family: "Poppins Medium";
+
+    filter: drop-shadow(-0.1rem 0 0 rgb(27, 27, 27));
 }
 
 input, select {
