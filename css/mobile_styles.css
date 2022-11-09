@@ -73,6 +73,10 @@
         #footer {
             height: 5vh;
         }
+
+        #footer p{
+            font-size: 1vh;
+        }
         
         #about {
             width: 90%;

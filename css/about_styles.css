@@ -25,4 +25,5 @@
 #about h1 {
     position: relative;
     font-size: max(5vw, 5vh);
+    margin: 0 0 -5% 0;
 }

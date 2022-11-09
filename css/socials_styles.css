@@ -16,6 +16,7 @@
     position: relative;
 
     height: 50%;
+    max-height: 1.5vh;
     margin: 0 5%;
 
     fill: #0070ba;
@@ -29,6 +30,7 @@
     position: relative;
 
     height: 50%;
+    max-height: 1.5vh;
     margin: 0 5%;
 
     fill: #ff424b;
@@ -42,6 +44,7 @@
     position: relative;
 
     height: 50%;
+    max-height: 1.5vh;
     margin: 0 5%;
     
     fill: #1d9bf0;
@@ -55,6 +58,7 @@
     position: relative;
 
     height: 50%;
+    max-height: 1.5vh;
     margin: 0 5%;
     
     fill: #c00;
