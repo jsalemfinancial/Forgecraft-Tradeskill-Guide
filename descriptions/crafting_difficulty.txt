@@ -1,1 +1,1 @@
-This is the crafting difficulty of the item as seen in the crafting menu. Each difference in quality tiers has tight-knit ratio of the crafting skill you need to guarantee a quality, or to craft the next highest one.
+This is the crafting difficulty of the item as seen in the crafting menu.

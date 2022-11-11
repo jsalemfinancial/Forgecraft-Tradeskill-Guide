@@ -96,23 +96,23 @@
 
 #twitch-player-minimize {
     position: absolute;
-    font-size: 3vw;
-    color: #5c16c5;
-    z-index: 101;
+    color: white;
 
-    top: -1vh;
-    left: 0.5vw;
+    top: -7%;
+    left: 3.5%;
+    font-size: 4vw;
+    z-index: 101;
 }
 
 #twitch-player-minimize:hover {
-    color: #954eff;;
+    color: #954eff;
     cursor: pointer;
 }
 
 #stream-link {
     position: absolute;
 
-    max-width: 50%;
+    max-width: 25%;
     max-height: 50%;
 
     right: 7.5%;
