@@ -2,4 +2,15 @@
 
 #tutorial {
     display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tutorial-video-wrapper {
+    position: absolute;
+
+    width: 75vw;
+    height: 75vh;
 }

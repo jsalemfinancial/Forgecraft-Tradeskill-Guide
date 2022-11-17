@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     // Fetch About Section Description.
     fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/about_desc.txt")
     .then(response => response.text())
-    .then(text => document.getElementById("about").getElementsByTagName("p")[0].innerText = text);  
+    .then(text => document.getElementById("introduction").getElementsByTagName("p")[0].innerText = text);  
     
     // Changing Tabs -- Non-array Method.
 

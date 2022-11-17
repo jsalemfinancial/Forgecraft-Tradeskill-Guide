@@ -18,7 +18,7 @@ let Controller = new class {
             this[tab].style.justifyContent = "start";
         } else if (tab == "about") {
             this[tab].style.display = "flex";
-        } else {
+        } else if (tab == "tutorial") {
             this[tab].style.display = "flex";
         }
     };
