@@ -1,7 +1,3 @@
 This website was designed to assist you in calculating your crafting success rate. In the past, it was a simple question: Can I craft this? Yes or No. We now have a more in-depth and detailed system to navigate. These tools will help to guide you through the nooks and crannies of crafting - for yourself or for profit. The calculator makes use of several variables to solve whether you can craft an item at the desired quality level. It will even tell you how much skill would be necessary to reach the next maximum quality level. 
 
 There are plenty of instances in this reworked crafting system that will leave you scratching your head and wondering if it's even worth attempting a specific craft. With the click of a few buttons, the calculator can predict the success rate of your crafts, saving you time, money and materials.
-
-Disclaimer: This site uses YouTube embeds; by using this site, the user agrees to Google data collection policies. Additionally, all World of Warcraft assets used on the site belong to Blizzard.
-
-Licensing: This project is distributed under the MIT license.

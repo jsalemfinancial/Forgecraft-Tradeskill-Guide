@@ -51,3 +51,8 @@
     font-size: 1rem;
     white-space: pre-line;
 }
+
+#disclaimers-licensing {
+    font-size: 1rem !important;
+    white-space: pre-line !important;
+}
