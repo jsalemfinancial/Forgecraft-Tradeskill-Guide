@@ -109,6 +109,40 @@ input, select {
     -webkit-filter: contrast(120%);
 }
 
+#body-background-static {
+    position: absolute;
+    display: none;
+
+    background-image: url("../graphics/dragonflight_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -5vw -45vh;
+
+    width: 120%;
+    height: 100%;
+    z-index: -1;
+
+    overflow: hidden;
+
+    filter: contrast(120%);
+    -webkit-filter: contrast(120%);
+}
+
+#background-animation-button {
+    position: absolute;
+    font-size: max(2vw, 2vh);
+    
+    left: 2.5%;
+    bottom: 5%;
+}
+
+#background-animation-button:hover {
+    cursor: pointer;
+
+    transform: scale(110%);
+    -webkit-transform: scale(110%);
+}
+
 #navbar-layer-one {
     width: 100vw;
     height: 7vh;

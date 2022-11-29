@@ -5,7 +5,20 @@ window.addEventListener("load", () => {
     // Fetch About Section Description.
     fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/about_desc.txt")
     .then(response => response.text())
-    .then(text => document.getElementById("introduction").getElementsByTagName("p")[0].innerText = text);  
+    .then(text => document.getElementById("introduction").getElementsByTagName("p")[0].innerText = text);
+
+    // Background Animation Toggle.
+    document.getElementById("background-animation-button").addEventListener("click", () => {
+        if (document.getElementById("body-background").style.display != "none") {
+            document.getElementById("body-background-static").style.display = "flex";
+            document.getElementById("body-background").style.display = "none";
+            document.getElementById("background-animation-button").style.color = "gray";
+        } else {
+            document.getElementById("body-background").style.display = "flex";
+            document.getElementById("body-background-static").style.display = "none";
+            document.getElementById("background-animation-button").style.color = "#FFD700";
+        }
+    });
     
     // Changing Tabs -- Non-array Method.
 
@@ -91,6 +104,8 @@ window.addEventListener("load", () => {
         });
     }); 
     
+    // Display Advanced Section Lightbox
+
     document.getElementById("advanced-button").addEventListener("click", () => {
         document.getElementsByName("iBonusTotal")[0].getElementsByTagName("h2")[0].innerText = (Calculate.iBonus).toFixed(2);
         document.getElementsByName("skillToNextMin")[0].getElementsByTagName("h2")[0].innerText = Math.ceil(Calculate.skillToNextMin);
@@ -107,6 +122,8 @@ window.addEventListener("load", () => {
         document.getElementById("advanced-lightbox").style.display = "";
     });
     
+    // Twitch Embed with Show/Hide
+
     document.getElementById("twitch-player-minimize").addEventListener("click", twitchMinimize);
     
     document.getElementById("stream-link").addEventListener("click", async () => {

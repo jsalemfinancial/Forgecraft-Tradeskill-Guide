@@ -22,6 +22,14 @@
             font-size: 1vh;
         }
 
+        #background-animation-button {
+            position: absolute;
+            font-size: max(2vw, 2vh);
+            
+            left: 2.5%;
+            bottom: 7.5%;
+        }
+
         #calculator {
             display: grid;
         
@@ -112,8 +120,9 @@
         
         #twitch-player-minimize {
             position: absolute;
+            color: #954eff;
+
             font-size: max(6vw,6vh);
-        
             top: -2.5%;
             left: 5%;
 
