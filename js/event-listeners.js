@@ -118,9 +118,9 @@ window.addEventListener("load", () => {
         document.getElementById("advanced-lightbox").style.display = "";
     });
 
-    document.getElementById("advanced-lightbox").addEventListener("click", () => {
-        document.getElementById("advanced-lightbox").style.display = "";
-    });
+    // document.getElementById("advanced-lightbox").addEventListener("click", () => {
+    //     document.getElementById("advanced-lightbox").style.display = "";
+    // });
     
     // Twitch Embed with Show/Hide
 
