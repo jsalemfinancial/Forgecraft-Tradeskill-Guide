@@ -84,11 +84,11 @@ window.addEventListener("load", () => {
                     .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
             };
 
-            if (variable.parentElement.getAttribute("name") == "iSklRgtBonusLabel") {
-                await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/skill_reagent_bonus.txt")
-                    .then(response => response.text())
-                    .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
-            };
+            // if (variable.parentElement.getAttribute("name") == "iSklRgtBonusLabel") {
+            //     await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/skill_reagent_bonus.txt")
+            //         .then(response => response.text())
+            //         .then(text => document.getElementById("grid-item-footer").getElementsByTagName("p")[0].innerText = text);             
+            // };
 
             if (variable.parentElement.getAttribute("name") == "advancedLabel") {
                 await fetch("https://raw.githubusercontent.com/jsalemfinancial/WoW-Applet/main/descriptions/advanced.txt")
